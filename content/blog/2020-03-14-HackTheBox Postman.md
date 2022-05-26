@@ -9,7 +9,7 @@ published: true
 
 # 0x0 Introduction
 My first post on a HTB machine and the second Box I managed to own (the first one is yet to retire so there will also be writeup for that) featuring redis and webmin.
-![image](/assets/images/Postman_htb.png "Postman Logo")
+![image](/images/Postman_htb.png "Postman Logo")
 
 
 # 0x1 Getting a foothold

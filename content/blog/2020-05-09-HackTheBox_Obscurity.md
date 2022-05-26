@@ -9,7 +9,7 @@ published: true
 
 # 0x0 Introduction
 Yet another HackTheBox Box, this time it was all about obscure hidden stuff and reversing some custom crypto Definitely one of the more ctf-like boxes as this is (probably, you never know) not something you would encounter in a real-world pentest. It was a very interesting box nevertheless.
-![image](/assets/images/obsurity_htb.png "Obscurity Logo")
+![image](/images/obsurity_htb.png "Obscurity Logo")
 
 # 0x1 getting a foothold
 
@@ -22,7 +22,7 @@ Segmentation fault
 ```
 
 Nmap got a freaking segmentation fault, gotta be honest that had me laughing for a while.
-I guess it got the segfaults on the scripts (-sC) or version enumeration (-sV) because a simple scan  
+I guess it got the segfaults on the scripts (-sC) or version enumeration (-sV) because a simple scan
 on all Ports (-p-) worked just fine and returned the following:
 
 ```
@@ -50,10 +50,10 @@ Target: http://10.10.10.168:8080/FUZZ/SuperSecureServer.py
 Total requests: 4614
 
 ===================================================================
-ID           Response   Lines    Word     Chars       Payload                                                      
+ID           Response   Lines    Word     Chars       Payload
 ===================================================================
 
-000001245:   200        170 L    498 W    5892 Ch     "develop" 
+000001245:   200        170 L    498 W    5892 Ch     "develop"
 ```
 
 So lets have a look at "SuperSecureServer.py"
@@ -80,13 +80,13 @@ Connection: {connectionType}
 """
 DOC_ROOT = "DocRoot"
 
-CODES = {"200": "OK", 
+CODES = {"200": "OK",
         "304": "NOT MODIFIED",
-        "400": "BAD REQUEST", "401": "UNAUTHORIZED", "403": "FORBIDDEN", "404": "NOT FOUND", 
+        "400": "BAD REQUEST", "401": "UNAUTHORIZED", "403": "FORBIDDEN", "404": "NOT FOUND",
         "500": "INTERNAL SERVER ERROR"}
 
-MIMES = {"txt": "text/plain", "css":"text/css", "html":"text/html", "png": "image/png", "jpg":"image/jpg", 
-        "ttf":"application/octet-stream","otf":"application/octet-stream", "woff":"font/woff", "woff2": "font/woff2", 
+MIMES = {"txt": "text/plain", "css":"text/css", "html":"text/html", "png": "image/png", "jpg":"image/jpg",
+        "ttf":"application/octet-stream","otf":"application/octet-stream", "woff":"font/woff", "woff2": "font/woff2",
         "js":"application/javascript","gz":"application/zip", "py":"text/plain", "map": "application/octet-stream"}
 
 
@@ -111,7 +111,7 @@ class Request:
         except:
             self.good = False
 
-    def parseRequest(self, request):        
+    def parseRequest(self, request):
         req = request.strip("\r").split("\n")
         method,doc,vers = req[0].split(" ")
         header = req[1:-3]
@@ -125,7 +125,7 @@ class Request:
 
 
 class Server:
-    def __init__(self, host, port):    
+    def __init__(self, host, port):
         self.host = host
         self.port = port
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -145,7 +145,7 @@ class Server:
             try:
                 data = client.recv(size)
                 if data:
-                    # Set the response to echo back the recieved data 
+                    # Set the response to echo back the recieved data
                     req = Request(data.decode())
                     self.handleRequest(req, client, address)
                     client.shutdown()
@@ -155,7 +155,7 @@ class Server:
             except:
                 client.close()
                 return False
-    
+
     def handleRequest(self, request, conn, address):
         if request.good:
 #            try:
@@ -169,7 +169,7 @@ class Server:
             document = self.serveDoc("/errors/400.html", DOC_ROOT)
             statusNum="400"
         body = document["body"]
-        
+
         statusCode=CODES[statusNum]
         dateSent = ""
         server = "BadHTTPServer"
@@ -180,10 +180,10 @@ class Server:
 
 
         resp = Response(
-        statusNum=statusNum, statusCode=statusCode, 
-        dateSent = dateSent, server = server, 
-        modified = modified, length = length, 
-        contentType = contentType, connectionType = connectionType, 
+        statusNum=statusNum, statusCode=statusCode,
+        dateSent = dateSent, server = server,
+        modified = modified, length = length,
+        contentType = contentType, connectionType = connectionType,
         body = body
         )
 
@@ -280,8 +280,8 @@ www-data@obscure:/$
 
 # 0x2 Getting the user.txt
 
-As www-data we can go to the directory of 'robert' and have the permission to read most his files,  
-including the "BetterSSH.py" and "SuperSecureCrpyt.py". For the user it seems that the "SuperSecureCrypt"  
+As www-data we can go to the directory of 'robert' and have the permission to read most his files,
+including the "BetterSSH.py" and "SuperSecureCrpyt.py". For the user it seems that the "SuperSecureCrypt"
 is the relevant part since we also found an encrpyted "passwordreminder" file in the robert directory.
 Lets have a look at "SuperSecureCrypt.py":
 
@@ -403,7 +403,7 @@ with open(args.p,'r',encoding='UTF-8') as f:
 def genKey(original, encrypted):
     key = ""
     position = -1
-    #gotta go through all the characters in the encrypted text 
+    #gotta go through all the characters in the encrypted text
     for x in encrypted:
         #start at position 0
         position += 1
@@ -425,11 +425,11 @@ print(key)
 Using this script as seen below:
 
 ```
-www-data@obscure:/home/robert$ python3 /tmp/keygen2.py -e out.txt -p check.txt 
+www-data@obscure:/home/robert$ python3 /tmp/keygen2.py -e out.txt -p check.txt
 alexandrovichalexandrovichalexandrovichalexandrovichalexandrovichalexandrovichalexandrovichal
 ```
 
-We now know that the key is "alexandrovich".  
+We now know that the key is "alexandrovich".
 Once we use that key with the "passwordreminder" file we get the password for robert and can login as him via ssh
 
 **SecThruObsFTW**
@@ -467,7 +467,7 @@ try:
         if not x == None:
             passwords.append(x)
 
-    passwordFile = '\n'.join(['\n'.join(p) for p in passwords]) 
+    passwordFile = '\n'.join(['\n'.join(p) for p in passwords])
     with open('/tmp/SSH/'+path, 'w') as f:
         f.write(passwordFile)
     time.sleep(.1)
@@ -512,7 +512,7 @@ if session['authenticated'] == 1:
 
 ```
 
-Here we have a race condition. if we look at this part of the script 
+Here we have a race condition. if we look at this part of the script
 
 ```py
 with open('/tmp/SSH/'+path, 'w') as f:
@@ -563,7 +563,7 @@ $6$fZZcDG7g$lfO35GcjUmNs3PSjroqNGZjH35gN4KjhHbQxvWO0XU.TCIHgavst7Lj8wLF/xQ21jYW5
 7
 ```
 
-So we could now go and crack this hash, or we use another mistake that was made in this BetterSSH.py, which we can see here: 
+So we could now go and crack this hash, or we use another mistake that was made in this BetterSSH.py, which we can see here:
 
 ```py
 if session['authenticated'] == 1:
@@ -578,7 +578,7 @@ This means that all our commands that we run in this ssh are executed as sudo -u
 -u root whoami
 ```
 
-we can see that the command got executed as root. Which means we are able to get root-flag with 
+we can see that the command got executed as root. Which means we are able to get root-flag with
 
 ```
 -u root cat /root/root.txt

