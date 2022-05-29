@@ -10,7 +10,7 @@ published: true
 
 ## 0x0 Introduction
 Welcome to another HackTheBox writeup, in this one we have to enumerate users, make heavy use of impacket scripts to kerberoast one of the users and we utilize winpeas to escalate our privileges.
-![image](/images/sauna/sauna_infocard.png "Sauna")
+![image](/images/sauna/sauna_pwn.png "Sauna")
 
 ## 0x1 Getting a foothold (and the User)
 
