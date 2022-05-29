@@ -10,7 +10,7 @@ published: true
 
 ## 0x0 Introduction
 Welcome to another HackTheBox writeup, in this one we have to enumerate users, make heavy use of impacket scripts to kerberoast one of the users and we utilize winpeas to escalate our privileges.
-![image](/images/Sauna/sauna_infocard.png "Sauna")
+![image](/images/sauna/sauna_infocard.png "Sauna")
 
 ## 0x1 Getting a foothold (and the User)
 
@@ -47,7 +47,7 @@ PORT     STATE SERVICE       VERSION
 ```
 
 On the Website (http://10.10.10.175) we could find some potential usernames:
-![image](/images/Sauna/sauna_meet_the_team.png "Users")
+![image](/images/sauna/sauna_meet_the_team.png "Users")
 
 I created a File with possible Usernames from this:
 ```
@@ -188,7 +188,7 @@ From this point you can just switch direktories to his desktop and you get the u
 
 As the first step we downloaded winpeas and used the upload function of evil-winrm to get it on the box. For those who may not know, winpeas is part of the privilege-escalation-awesome-suite (peas) and it's essenitally a script that looks for all kinds of possible misconfigurations that could lead to us being able to escalate our privileges.
 And winpeas did indeed find something useful, it found the login credentials for svc_loanmgr account.
-![image](/images/Sauna/sauna_svc_pw.png "svc_pw")
+![image](/images/sauna/sauna_svc_pw.png "svc_pw")
 
 ```
 $ evil-winrm -u svc_loanmgr -p Moneymakestheworldgoround! -i 10.10.10.175
