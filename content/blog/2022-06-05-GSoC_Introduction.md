@@ -7,7 +7,7 @@ tags: [GSoC]
 published: true
 ---
 
-![image](/images/gsoc/logo.png "gsoc-logo")
+![image](/images/gsoc/logo.svg "gsoc-logo")
 
 Welcome, in this series of blog posts I want to take you with me on my journey with Google Summer of Code, which I am participating in this year.
 In case you have never heard about it, I will start with explaining what this event is all about and why I take part in it. If you have already know what it is, then feel free to [skip it].
@@ -33,7 +33,7 @@ The CoreDNS project on the other hand did not seem to gather as much attention a
 So, observing if other students show interests in the same project can also be useful and you might want to take that into consideration. There are far more students applying for GSoC every year than there are slots available.
 
 ### Project description
-You can find my detailed project proposal: [here][proposal]
+You can find my detailed project proposal: [here][proposal] \
 TLDR: I am creating a new TLS plugin that can be used as a drop-in-replacement for the current one, so that CoreDNS operators can serve DNS over TLS without having to worry about certificates at all, they will be aquired, applied and renewed wihtout them having to do anything.
 
 ### Current State
@@ -42,7 +42,7 @@ Keep in mind that this is a work in progress and there might still be a lot of m
 Once everything works I will also send a pull request to the CoreDNS repo and ask for it to replace the current tls internal plugin.
 
 ### Working with mentors
-I am still very early in the project as of writing this, but so far I believe to have gotten lucky with 2 excellent mentors in [yong tang][yongtag] and [paul greenberg][greenpau].
+I am still very early in the project as of writing this, but so far I believe to have gotten lucky with 2 excellent mentors in [yong tang][yongtang] and [paul greenberg][greenpau].
 We are doing weekly meeting to sync up on the state of the project and they are also always open to questions in the mean time.
 
 ### What's next?
