@@ -19,5 +19,4 @@ When sending data over a network there is just so much that can go wrong, yet we
 
 - [GitHub](https://github.com/mariuskimmina)
 - [LinkedIn](https://linkedin.com/in/marius-kimmina)
-- [Twitter](https://twitter.com/mariuscodes)
-- mariuscodes@gmail.com
+- [Twitter](https://twitter.com/mariuskimmina)

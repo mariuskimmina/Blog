@@ -17,7 +17,7 @@ Let's start with the official definition by Google.
 > Google Summer of Code is a global, online program focused on bringing new contributors into open source software development. GSoC Contributors work with an open source organization on a 12+ week programming project under the guidance of mentors.
 
 Essentially, first open source projects apply to GSoC with projects that they would like students to work on. These projects will then be listed on the GSoC page and students can apply for them (but you can also propose your own project idea if you want to). Since Google is sponsoring these projects, only a limited amount of applications will be accepted. When you successfully applied for a project and have been accepted then you will spend around 12 weeks working on said project with guidance from your mentors, which will most likely be maintainers of the project.
-If everything goes well and your mentors are happy with the results you deliver, then you get paid for your work by google with a stipend. That being said, being able to work together closely with experienced open-source developers and learning from them is worth far more than the payments you receiv.
+If everything goes well, your mentors are happy with the results you deliver, then you get paid for your work by google with a stipend. That being said, being able to work together closely with experienced open-source developers and learning from them is worth far more than the payments you receiv.
 
 
 ### Which project(s) did I apply for?
@@ -28,7 +28,7 @@ There were two projects that seemed really interesting to me:
 * [Kubebuilder][Kubebuilder]
 * [CoreDNS][CoreDNS]
 
-I thought about applying for the kubebuilder project first, but after joining one of their project meetings over zoom, it became aparent that there are many students which will apply for this project and the odds of being accepted are rather low.
+I thought about applying to the kubebuilder project first, but after joining one of their project meetings over zoom, it became aparent that there are many students which will apply for this project and the odds of being accepted are rather low.
 The CoreDNS project on the other hand did not seem to gather as much attention and since both project seemed interesting and worthwhile, I applied for the CoreDNS project.
 So, observing if other students show interests in the same project can also be useful and you might want to take that into consideration. There are far more students applying for GSoC every year than there are slots available.
 
@@ -37,13 +37,13 @@ You can find my detailed project proposal: [here][proposal] \
 TLDR: I am creating a new TLS plugin that can be used as a drop-in-replacement for the current one, so that CoreDNS operators can serve DNS over TLS without having to worry about certificates at all, they will be aquired, applied and renewed wihtout them having to do anything.
 
 ### Current State
-I am currently developing the plugin as an [external plugin][explugins] first, the repository can be found: [here][tlsplus]
+I am currently developing the plugin as an [external plugin][explugins] first, the repository can be found: [here][tlsplus] \
 Keep in mind that this is a work in progress and there might still be a lot of messy code, debug information and missing functionality.
 Once everything works I will also send a pull request to the CoreDNS repo and ask for it to replace the current tls internal plugin.
 
 ### Working with mentors
 I am still very early in the project as of writing this, but so far I believe to have gotten lucky with 2 excellent mentors in [yong tang][yongtang] and [paul greenberg][greenpau].
-We are doing weekly meeting to sync up on the state of the project and they are also always open to questions in the mean time.
+We are doing weekly meetings to sync up on the state of the project and to discuss any problems I face. They are also always open to questions in the mean time.
 
 ### What's next?
 In the next blog posts I will describe challenges that I faced and the solutions that I have come up with. I will provide updates on the state of the project and on my experiences as a GSoC Contributor.
