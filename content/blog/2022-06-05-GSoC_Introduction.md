@@ -1,13 +1,13 @@
 ---
 title: Google Summer of Code - Introduction
 author: Marius Kimmina
-date: 2022-06-03 14:10:00 +0800
+date: 2022-06-05 14:10:00 +0800
 categories: [GSoC]
 tags: [GSoC]
 published: true
 ---
 
-![image](/images/gsoc/logo.svg "gsoc-logo")
+![image](/images/gsoc/logo.png "gsoc-logo")
 
 Welcome, in this series of blog posts I want to take you with me on my journey with Google Summer of Code, which I am participating in this year.
 In case you have never heard about it, I will start with explaining what this event is all about and why I take part in it. If you have already know what it is, then feel free to [skip it].
