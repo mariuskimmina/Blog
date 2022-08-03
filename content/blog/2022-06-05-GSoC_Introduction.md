@@ -4,19 +4,19 @@ author: Marius Kimmina
 date: 2022-06-03 14:10:00 +0800
 categories: [GSoC]
 tags: [GSoC]
-published: true
+published: false
 ---
 
 ![image](/images/gsoc/logo.png "gsoc-logo")
 
 Welcome, in this series of blog posts I want to take you with me on my journey with Google Summer of Code, which I am participating in this year.
-In case you have never heard about it, I will start with explaining what this event is all about and why I take part in it. If you have already know what it is, then feel free to [skip it].
+In case you have never heard about it, I will start with explaining what this event is all about and why I take part in it.
 
 ### What is Google Summer of Code?
 Let's start with the official definition by Google.
 > Google Summer of Code is a global, online program focused on bringing new contributors into open source software development. GSoC Contributors work with an open source organization on a 12+ week programming project under the guidance of mentors.
 
-Essentially, first open source projects apply to GSoC with projects that they would like students to work on. These projects will then be listed on the GSoC page and students can apply for them (but you can also propose your own project idea if you want to). Since Google is sponsoring these projects, only a limited amount of applications will be accepted. When you successfully applied for a project and have been accepted then you will spend around 12 weeks working on said project with guidance from your mentors, which will most likely be maintainers of the project.
+First open source projects apply to GSoC with projects that they would like students to work on. These projects will then be listed on the GSoC page and students can apply for them (but you can also propose your own project idea if you want to). Since Google is sponsoring these projects, only a limited amount of applications will be accepted. When you successfully applied for a project and have been accepted then you will spend around 12 weeks working on said project with guidance from your mentors, which will most likely be maintainers of the project.
 If everything goes well, your mentors are happy with the results you deliver, then you get paid for your work by google with a stipend. That being said, being able to work together closely with experienced open-source developers and learning from them is worth far more than the payments you receiv.
 
 

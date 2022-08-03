@@ -1,0 +1,36 @@
+baseURL: "https://mariuskimmina.com/"
+languageCode: "en-us"
+title: "Marius Kimmina"
+theme: "PaperMod"
+
+menu:
+  main:
+  - identifier: blog
+    name: Blog
+    url: /blog/
+    weight: 10
+  - identifier: hacks
+    name: Hacks
+    url: /hacks/
+    weight: 10
+  - identifier: projects
+    name: Projects
+    url: /projects
+    weight: 30
+  - identifier: tags
+    name: Tags
+    url: /tags/
+    weight: 40
+
+
+params:
+  profileMode:
+    enabled: true
+    subtitle: "Being Currious"
+    imageUrl: "/profile/pic4.jpg" # optional
+    imageTitle: "alt text" # optional
+      #imageWidth: 120 # custom size
+      #imageHeight: 120 # custom size
+    buttons:
+      - name: About
+        url: "/about"
