@@ -72,8 +72,8 @@ go build
 ### authoritative Corefile
 
 The following is a straightforward example configuration for a CoreDNS server that is setup as the authoritative DNS Server for `mydomain.com`.
-this example assumes that there are two host under `mydomain.com` one is a website, reachable at `mydomain.com` directly the other one is 
-the CoreDNS server that's running at `ns1.mydomain.com`.
+this example assumes that there are two host under `mydomain.com` one is a website, reachable at `mydomain.com` directly. The other one is 
+a CoreDNS server that's running at `ns1.mydomain.com`.
 
 ```
 tls://mydomain.com {
@@ -104,6 +104,34 @@ mydomain.com {
 }
 ```
 
+### forwarding Corefile
+
+```
+tls://. {
+    tls acme {
+        domain ns1.mydomain.com
+    }
+    forward . tls://9.9.9.9 {
+        tls_servername dns.quad9.net
+    }
+}
+
+https://. {
+    tls acme {
+        domain ns1.mydomain.com
+    }
+    forward . https://9.9.9.9 {
+        tls_servername dns.quad9.net
+    }
+}
+
+mydomain.com {
+    hosts {
+        xxx.xxx.xxx.xxx mydomain.com
+        xxx.xxx.xxx.xxx ns1.mydomain.com
+    }
+}
+```
 ## Futute work
 
 ## References
