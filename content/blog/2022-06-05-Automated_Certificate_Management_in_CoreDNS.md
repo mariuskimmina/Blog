@@ -20,6 +20,7 @@ https://github.com/mariuskimmina/coredns-tlsplus
 ## Requirements
 This plugin uses [ACME][ACME] to obtain and renew certificates. In order for this to work you need to do the following:
 * Own a domain
+* Setup CoreDNS on a publicly reachable IP
 * Setup CoreDNS as the authoritative DNS server for that domain
 * Port 53 - While CoreDNS may serve DNS over TLS on any port, during startup the plugin will use port 53 to solve the ACME Challenge
 
@@ -66,6 +67,41 @@ go mod tidy
 
 # Compile
 go build
+```
+
+### authoritative Corefile
+
+The following is a straightforward example configuration for a CoreDNS server that is setup as the authoritative DNS Server for `mydomain.com`.
+this example assumes that there are two host under `mydomain.com` one is a website, reachable at `mydomain.com` directly the other one is 
+the CoreDNS server that's running at `ns1.mydomain.com`.
+
+```
+tls://mydomain.com {
+    tls acme {
+        domain ns1.mydomain.com
+    }
+    hosts {
+        xxx.xxx.xxx.xxx mydomain.com
+        xxx.xxx.xxx.xxx ns1.mydomain.com
+    }
+}
+
+https://mydomain.com {
+    tls acme {
+        domain ns1.mydomain.com
+    }
+    hosts {
+        xxx.xxx.xxx.xxx mydomain.com
+        xxx.xxx.xxx.xxx ns1.mydomain.com
+    }
+}
+
+mydomain.com {
+    hosts {
+        xxx.xxx.xxx.xxx mydomain.com
+        xxx.xxx.xxx.xxx ns1.mydomain.com
+    }
+}
 ```
 
 ## Futute work
