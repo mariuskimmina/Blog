@@ -1,5 +1,5 @@
 ---
-title: Google Summer of Code - Introduction
+title: Google Summer of Code
 author: Marius Kimmina
 date: 2022-06-03 14:10:00 +0800
 categories: [GSoC]
