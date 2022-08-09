@@ -35,9 +35,15 @@ There are 2 cases in which this plugin can be useful
 
 ### authoritative DNS
 
+Since CoreDNS has to be the authoritative DNS Server for a domain to make this plugin work, the most obvious use case is to serve
+DNS over TLS or DNS over HTTPS for this particular domain.
+
 ### Forwarding
 
-tesjtalkdfjlaskfdj
+For this to work, the CoreNDS server still needs to be setup to be the authoriative DNS server for that domain. Instead of only
+answering queries about this particular domain we instead forward all DoT querys to an upstream DNS Resolver such Google's 8.8.8.8 or 
+Cloudflare's 1.1.1.1 Servers.
+
 
 ## Setup
 The goal is to have this plugin integrated into the main CoreDNS repository, once that happens there wont be any setup requirements.
