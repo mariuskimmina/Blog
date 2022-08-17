@@ -28,7 +28,8 @@ have to do a bit more research. That being said, other DNS servers like [bind][b
 
 ## Using the hosts plugin
 
-The simplest solution would be to use the host plugin. This allows you to konfigure 
+The simplest solution would be to use the host plugin. 
+This allows you to configure a fully functional dns server for your domain in under 10 lines.
 
 ```
 mariuskimmina.com {
@@ -40,9 +41,17 @@ mariuskimmina.com {
 }
 ```
 
-
-
 ## Using a Zone file
+If you need more control about the details, or you have previously used another DNS server, than using a zone file might
+be better suited for you. These files are standarized and if you have previously used one with a bind server then the same 
+file should work just fine with CoreDNS
+
+```
+mariuskimmina.com {
+        log
+        file db.mariuskimmina.com
+}
+```
 
 ```
 $ORIGIN mariuskimmina.com.     ; designates the start of this zone file in the namespace
@@ -56,12 +65,9 @@ $TTL    604800
 
 
                         IN  NS  ns1.mariuskimmina.com.
-                        IN  NS  ns2.mariuskimmina.com.
                         IN  A   75.2.60.5
 
 ns1.mariuskimmina.com.        IN  A   207.154.249.62
-ns2.mariuskimmina.com.        IN  A   134.209.236.227
-blog.mariuskimmina.com.       IN  A   75.2.60.5
 www.mariuskimmina.com.        IN  CNAME mariuskimmina.com.
 ```
 
