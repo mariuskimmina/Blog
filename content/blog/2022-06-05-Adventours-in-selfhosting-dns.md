@@ -9,25 +9,26 @@ published: false
 
 When you visited this domain, mariuskimmina.com, then you just used my own selfhosted DNS Server (assuming that you didn't have the IP cached).
 
-
 ## Why run your own DNS servers?
 I am doing it to learn more about DNS, and also about running a highly available, globally distributed service. If you relly want to get into the technical
 pros and cons about it I recommend you to read through the [References](#references) at the end of this post.
 
 ## Prerequisites
-
 * Owning a Domain name
 * A linux server with a publicly accessbile IP
     * Cloud Providers like Digital Ocean or Linode work well
 
 ---
 
-
 ## The Basics
 
-I am using [CoreDNS][CoreDNS].
+My DNS server of choice is [CoreDNS][CoreDNS], which will be important later when we come to the topic of DNS over TLS. 
+Also there will be many configurations shown which are exclusive to CoreDNS. So if you want to use another solution you will
+have to do a bit more research. That being said, other DNS servers like [bind][bind] can act as your authoritative DNS server as well.
 
 ## Using the hosts plugin
+
+The simplest solution would be to use the host plugin. This allows you to konfigure 
 
 ```
 mariuskimmina.com {
@@ -114,3 +115,5 @@ https://lantian.pub/en/article/modify-website/selfhost-dns-root-server.lantian/
 [ACME]: https://www.rfc-editor.org/rfc/rfc8555
 [script]: https://github.com/mariuskimmina/.dotfiles/blob/main/bin/.local/bin/pmux
 [cloudflare]: https://blog.cloudflare.com/cloudflare-outage-on-july-17-2020/
+[CoreDNS]: https://github.com/coredns/coredns
+[bind]: https://github.com/isc-projects/bind9
