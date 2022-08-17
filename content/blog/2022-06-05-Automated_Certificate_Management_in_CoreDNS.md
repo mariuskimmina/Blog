@@ -78,7 +78,7 @@ a CoreDNS server that's running at `ns1.mydomain.com`.
 ```
 tls://mydomain.com {
     tls acme {
-        domain ns1.mydomain.com
+        domain *.mydomain.com
     }
     hosts {
         xxx.xxx.xxx.xxx mydomain.com
@@ -103,6 +103,8 @@ mydomain.com {
     }
 }
 ```
+
+As you can see in this line `domain *.mydomain.com` we can obtain wildcard certificates with this method. 
 
 ### forwarding Corefile
 
@@ -132,6 +134,23 @@ mydomain.com {
     }
 }
 ```
+
+
+## Setting up multiple DNS Server
+For the most part, dns server should be setup with some redundancy. If you want to use this plugin with multiple CoreDNS Server, they all need to be able to access
+the same Certificate. This can be achivied using a shared filesystem, like NFS, and pointing the `certpath` of all your CoreDNS Server to a location on this shared
+fileystem.
+
+```
+tls acme {
+    domain ns1.mydomain.com
+    certpath /some/path/on/nfs/certs/
+}
+```
+
+## How it works
+
+
 ## Futute work
 
 ## References
