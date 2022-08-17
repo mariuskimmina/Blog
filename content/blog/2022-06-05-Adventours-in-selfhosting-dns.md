@@ -71,7 +71,8 @@ ns1.mariuskimmina.com.        IN  A   207.154.249.62
 www.mariuskimmina.com.        IN  CNAME mariuskimmina.com.
 ```
 
-## Setting Custom DNS Servers at my Domain registrar
+## Setting Custom DNS Servers at the Domain registrar
+![image](/blog/Selfhosting-DNS/GoogleCustomDNS-Settings.png "Google Domain Settings")
 
 ![image](/blog/Selfhosting-DNS/StackOverflow-GlueRecords.png "StackOverflow to the rescue")
 
@@ -101,7 +102,7 @@ mariuskimmina.com.      604800  IN      NS      ns2.mariuskimmina.com.
 As you have seen, I am using CoreDNS as my DNS server. One of the reasons for that is that I like the plugin architecture of it and 
 I have also once [written a plugin for CoreDNS myself][my-plugin]. The plugin that I made uses the [ACME][ACME] protocol to obtain and renew
 tls certificates without any user interaction, as long as you own a domain and you have setup CoreDNS as the authoritative DNS server for it, 
-which is exactly what we did in this blog, then you are able to provide DNS over TLS and DNS over HTTP pretty easily.
+which is exactly what we did in this blog, then you are able to provide DNS over TLS and DNS over HTTPS pretty easily.
 
 
 ### References
