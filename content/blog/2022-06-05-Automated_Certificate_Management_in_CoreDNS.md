@@ -3,7 +3,7 @@ title: Automated Certificate Management in CoreDNS
 author: Marius Kimmina
 date: 2022-06-03 14:10:00 +0800
 tags: [DNS, Infra]
-published: false
+published: true
 ---
 
 This post introduces a new CoreDNS Plugin that allows for fully automatic TLS certificates in CoreDNS. No more worrying about
