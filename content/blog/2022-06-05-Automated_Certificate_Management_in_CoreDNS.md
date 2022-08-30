@@ -23,16 +23,17 @@ https://github.com/mariuskimmina/coredns-tlsplus
 First of all, using this plugin makes it really easy to setup DNS over TLS or DNS over HTTPS. If you are a Developer who wants to setup a DNS server with encryption, you can do this easily. You shouldn't need to be SRE or any other kind of infrastructure expert to set this up. As to when you want to use this pluign, there are 2 cases in which this plugin might help you tremendously. 
 
 * You want to setup an autoritative DNS server for your Domain and support DNS over TLS or DNS over HTTPS
-* You work in a very restricted network and want to setup an encrypted DNS forwarder
+* You work in a very restricted network and you need an encrypted DNS forwarder on a non-standard port
 
 
 ### authoritative DNS
 Since CoreDNS has to be the authoritative DNS Server for a domain to make this plugin work, the most obvious use case is to serve DNS over TLS or DNS over HTTPS for this particular domain. If you are the owner of `example.com` and you want to setup your own nameservers at `ns1.example.com` and `ns2.example.com`  for example (should never rely on a single nameserver) and you want to offer DNS over TLS or DNS over HTTPS then this plugin is for you! 
 
 ### Forwarding
-For this to work, the CoreNDS server still needs to be setup to be the authoriative DNS server for that domain. Instead of only
+For this to work, the CoreNDS server still needs to be setup to be the authoriative DNS server for a domain. Instead of only
 answering queries about this particular domain we instead forward all DoT querys to an upstream DNS Resolver such Google's 8.8.8.8 or 
 Cloudflare's 1.1.1.1 Servers.
+Once you have such a forwarder setup with this plugin you can just forget about it since the certificate renewal is going to happen automatically. 
 
 ## Requirements
 This plugin uses [ACME][ACME] to obtain and renew certificates. In order for this to work you need to do the following:
