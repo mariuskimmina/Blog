@@ -22,6 +22,9 @@ menu:
     url: /tags/
     weight: 40
 
+socialIcons:
+  - name: "twitter"
+    url: "https://twitter.com/mariuskimmina"
 
 params:
   profileMode:
@@ -34,3 +37,4 @@ params:
     buttons:
       - name: About
         url: "/about"
+          
