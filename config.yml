@@ -22,11 +22,13 @@ menu:
     url: /tags/
     weight: 40
 
-socialIcons:
-  - name: "twitter"
-    url: "https://twitter.com/mariuskimmina"
 
 params:
+  socialIcons:
+    - name: "twitter"
+      url: "https://twitter.com/mariuskimmina"
+    - name: "github"
+      url: "https://github.com/mariuskimmina"
   profileMode:
     enabled: true
     subtitle: "Being Currious"
