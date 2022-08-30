@@ -7,7 +7,7 @@ published: true
 ---
 
 
-When you visited this domain, mariuskimmina.com, then you just used my own selfhosted DNS Server (assuming that you didn't have the IP cached).
+When you visited this domain, mariuskimmina.com, then you might have used my own selfhosted DNS Server (assuming I didn't get bored of this and assuming there was no Cache involved).
 
 ## Why run your own DNS servers?
 I am doing it to learn more about DNS, and also about running a highly available, globally distributed service. If you relly want to get into the technical

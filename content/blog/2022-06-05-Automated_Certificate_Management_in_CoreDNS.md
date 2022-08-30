@@ -41,7 +41,7 @@ This plugin uses [ACME][ACME] to obtain and renew certificates. In order for thi
 * Setup CoreDNS as the authoritative DNS server for that domain
 * Port 53 - While CoreDNS may serve DNS over TLS on any port, during startup the plugin will use port 53 to solve the ACME Challenge
 
-To learn more about how to setup an authoritative DNS server click here(TODO: find a good link).\
+To learn more about how to setup an authoritative DNS server, take a look at my other article about [adventours in selfhosting autoritative DNS servers].
 Also, if you need a general refresher on how DNS works, take a look at [this comic][comic]
 
 
@@ -148,8 +148,6 @@ tls acme {
 ```
 
 ## How it works
-
-## How it works
 On startup the plugin first checks if it already has a valid certificate, if it does there is nothing to do and the CoreDNS server will start. If it doesn't (or if the certificate will expire soon) then it will initialize the ACME DNS Challenge and ask Let's Encrypt (assuming you didn't configure another CA) for a Certificate for the domain you configured  (assume it's  `ns1.example.com`). The plugin will also start to serve DNS requests on port 53. Let's Encrypt receives our request and sends out DNS requests for `_acme-challenge.example.com`. Since CoreDNS is supposed to be setup as the autoritative DNS server for `example.com`, these requests will reach us. The Plugin can answer those requests and in return receiv a valid certificate for `ns1.example.com`.
 
 TODO: add a graphic here
@@ -157,9 +155,15 @@ TODO: add a graphic here
 Furthermore, the plugin then starts a loop that runs in the background and checks if the certificate is about to expire. If it is, CoreDNS will initialize a restart which in turn leads to the plugin setup being executed again, which leads to a new certificate being obtained.
 
 ## Futute work
+There are more ways in which CoreDNS and the ACME protocol could be used for certificate management. 
+
+* CoreDNS could provide an API to let solve the AMCE Challenge for other (web-)servers
+* CoreDNS could use the API of another DNS provider to obtain a certificate for domain without having to be the autoritative DNS server itself
+
 
 ## References
 Certmagic: https://github.com/caddyserver/certmagic
 
 [ACME]: https://www.rfc-editor.org/rfc/rfc8555
 [comic]: https://howdns.works/ep1/
+[adventours in selfhosting autoritative DNS servers]: https://mariuskimmina.com/blog/2022-06-05-adventours-in-selfhosting-dns/
