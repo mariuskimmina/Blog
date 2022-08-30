@@ -11,12 +11,12 @@ expiring certificates and no need to setup external programms such as certbot. C
 https://github.com/mariuskimmina/coredns-tlsplus
 
 ## Table of Contents
-1. [Who should use this plugin and when?](#requirements)
-1. [Requirements](#requirements)
-2. [Use Case](#use-case)
+1. [Who should use this plugin and when?](#who-should-use-this-plugin-and-when)
+2. [Requirements](#requirements)
 3. [Setup](#setup)
-4. [Future Work](#future-work)
-5. [References](#references)
+4. [How it works](#how-it-works)
+5. [Future Work](#future-work)
+6. [References](#references)
 
 
 ## Who should use this plugin and when?
@@ -162,7 +162,9 @@ There are more ways in which CoreDNS and the ACME protocol could be used for cer
 
 
 ## References
+CoreDNS: https://github.com/coredns/coredns
 Certmagic: https://github.com/caddyserver/certmagic
+Pebble: https://github.com/letsencrypt/pebble
 
 [ACME]: https://www.rfc-editor.org/rfc/rfc8555
 [comic]: https://howdns.works/ep1/
