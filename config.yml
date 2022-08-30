@@ -29,6 +29,12 @@ params:
       url: "https://twitter.com/mariuskimmina"
     - name: "github"
       url: "https://github.com/mariuskimmina"
+    - name: "linkedin"
+      url: "https://github.com/mariuskimmina"
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/marius-kimmina/"
+    - name: "hackthebox"
+      url: "https://app.hackthebox.com/profile/36525"
   profileMode:
     enabled: true
     subtitle: "Being Currious"
