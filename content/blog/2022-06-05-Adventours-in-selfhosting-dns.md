@@ -3,7 +3,7 @@ title: Adventours in selfhosting DNS
 author: Marius Kimmina
 date: 2022-06-03 14:10:00 +0800
 tags: [DNS, Infra]
-published: false
+published: true
 ---
 
 
@@ -73,6 +73,10 @@ www.mariuskimmina.com.        IN  CNAME mariuskimmina.com.
 
 ## Setting Custom DNS Servers at the Domain registrar
 ![image](/blog/Selfhosting-DNS/GoogleCustomDNS-Settings.png "Google Domain Settings")
+
+You might wonder, how can we ask `ns1.mariuskimmina.com` about `mariskimmina.com`, don't we have to resolve `mariuskimmina.com` first
+to be able to ask about `ns1.mariuskimmina.com`? Well I was certainly confused about that but luckily StackOverflow has got my back as 
+always.
 
 ![image](/blog/Selfhosting-DNS/StackOverflow-GlueRecords.png "StackOverflow to the rescue")
 

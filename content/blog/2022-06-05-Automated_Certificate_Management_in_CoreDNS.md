@@ -11,11 +11,28 @@ expiring certificates and no need to setup external programms such as certbot. C
 https://github.com/mariuskimmina/coredns-tlsplus
 
 ## Table of Contents
+1. [Whou should use this plugin and when](#requirements)
 1. [Requirements](#requirements)
 2. [Use Case](#use-case)
 3. [Setup](#setup)
 4. [Future Work](#future-work)
 5. [References](#references)
+
+
+## Who should use this plugin and when?
+First of all, using this plugin makes it really easy to setup DNS over TLS or DNS over HTTPS. If you are a Developer who wants to setup a DNS server with encryption, you can do this easily. You shouldn't need to be SRE or any other kind of infrastructure expert to set this up. As to when you want to use this pluign, there are 2 cases in which this plugin might help you tremendously. 
+
+* You want to setup an autoritative DNS server for your Domain and support DNS over TLS or DNS over HTTPS
+* You work in a very restricted network and want to setup an encrypted DNS forwarder
+
+
+### authoritative DNS
+Since CoreDNS has to be the authoritative DNS Server for a domain to make this plugin work, the most obvious use case is to serve DNS over TLS or DNS over HTTPS for this particular domain. If you are the owner of `example.com` and you want to setup your own nameservers at `ns1.example.com` and `ns2.example.com`  for example (should never rely on a single nameserver) and you want to offer DNS over TLS or DNS over HTTPS then this plugin is for you! 
+
+### Forwarding
+For this to work, the CoreNDS server still needs to be setup to be the authoriative DNS server for that domain. Instead of only
+answering queries about this particular domain we instead forward all DoT querys to an upstream DNS Resolver such Google's 8.8.8.8 or 
+Cloudflare's 1.1.1.1 Servers.
 
 ## Requirements
 This plugin uses [ACME][ACME] to obtain and renew certificates. In order for this to work you need to do the following:
@@ -26,24 +43,6 @@ This plugin uses [ACME][ACME] to obtain and renew certificates. In order for thi
 
 To learn more about how to setup an authoritative DNS server click here(TODO: find a good link).\
 Also, if you need a general refresher on how DNS works, take a look at [this comic][comic]
-
-## Use Case
-
-There are 2 cases in which this plugin can be useful
-
-* authoritative DNS for a domain
-* Forwarding
-
-### authoritative DNS
-
-Since CoreDNS has to be the authoritative DNS Server for a domain to make this plugin work, the most obvious use case is to serve
-DNS over TLS or DNS over HTTPS for this particular domain.
-
-### Forwarding
-
-For this to work, the CoreNDS server still needs to be setup to be the authoriative DNS server for that domain. Instead of only
-answering queries about this particular domain we instead forward all DoT querys to an upstream DNS Resolver such Google's 8.8.8.8 or 
-Cloudflare's 1.1.1.1 Servers.
 
 
 ## Setup
@@ -150,6 +149,12 @@ tls acme {
 
 ## How it works
 
+## How it works
+On startup the plugin first checks if it already has a valid certificate, if it does there is nothing to do and the CoreDNS server will start. If it doesn't (or if the certificate will expire soon) then it will initialize the ACME DNS Challenge and ask Let's Encrypt (assuming you didn't configure another CA) for a Certificate for the domain you configured  (assume it's  `ns1.example.com`). The plugin will also start to serve DNS requests on port 53. Let's Encrypt receives our request and sends out DNS requests for `_acme-challenge.example.com`. Since CoreDNS is supposed to be setup as the autoritative DNS server for `example.com`, these requests will reach us. The Plugin can answer those requests and in return receiv a valid certificate for `ns1.example.com`.
+
+TODO: add a graphic here
+
+Furthermore, the plugin then starts a loop that runs in the background and checks if the certificate is about to expire. If it is, CoreDNS will initialize a restart which in turn leads to the plugin setup being executed again, which leads to a new certificate being obtained.
 
 ## Futute work
 
