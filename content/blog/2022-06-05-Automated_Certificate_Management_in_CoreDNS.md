@@ -11,7 +11,7 @@ expiring certificates and no need to setup external programms such as certbot. C
 https://github.com/mariuskimmina/coredns-tlsplus
 
 ## Table of Contents
-1. [Whou should use this plugin and when](#requirements)
+1. [Who should use this plugin and when?](#requirements)
 1. [Requirements](#requirements)
 2. [Use Case](#use-case)
 3. [Setup](#setup)
