@@ -164,13 +164,13 @@ There are more ways in which CoreDNS and the ACME protocol could be used for cer
 This Plugin was created as part of the 2022 Google Summer of Code. As a student I had made some small contributions to open-source projects here and there 
 but nothing that comes even close to the scale of this project. I want to thank my mentors Yong Tang and Paul Greenberg who guided me on this journey and 
 I would recommended anyone who wants to get started in open-source development to apply for the next Google Summer of Code. Due to my mentors I was not 
-only able to make major contribution to CoreDNS but they also taught me a lot about the economics of open-source technologies. The lessons I learned during these
-months will without a doubt ...
+only able to make a major contribution to CoreDNS but they also taught me a lot about the economics of open-source technologies. The lessons I learned during these
+months will without a doubt be useful for many years to come.
 
 ## References
-CoreDNS: https://github.com/coredns/coredns
-Certmagic: https://github.com/caddyserver/certmagic
-Pebble: https://github.com/letsencrypt/pebble
+CoreDNS: https://github.com/coredns/coredns  
+Certmagic: https://github.com/caddyserver/certmagic  
+Pebble: https://github.com/letsencrypt/pebble  
 
 [ACME]: https://www.rfc-editor.org/rfc/rfc8555
 [comic]: https://howdns.works/ep1/
