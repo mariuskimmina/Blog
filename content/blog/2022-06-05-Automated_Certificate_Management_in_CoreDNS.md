@@ -1,7 +1,7 @@
 ---
 title: Automated Certificate Management in CoreDNS
 author: Marius Kimmina
-date: 2022-06-03 14:10:00 +0800
+date: 2022-09-02 14:10:00 +0800
 tags: [DNS, Infra]
 published: true
 ---
