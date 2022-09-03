@@ -26,3 +26,4 @@ which I made [a major contribution][blog] to [CoreDNS][coredns].
 [HTB]: https://app.hackthebox.com/profile/36525
 [coredns]: https://github.com/coredns/coredns
 [blog]: https://mariuskimmina.com/blog/2022-06-05-automated_certificate_management_in_coredns/
+[GSoC]: https://summerofcode.withgoogle.com/
