@@ -1,7 +1,9 @@
-# About
+# Hey, I'm Marius.
 
-Hey, I'm Marius.\
-I work as a Software Engineer and focus on automation, infrastructure and security.
+I work as a Software Engineer and focus on automation, infrastructure and security.\
+Officially, my current job title is "DevOps Engineer". I am currently working with\
+and learning about AWS and Terraform while also coding in Go. 
+
 
 # Find me
 
