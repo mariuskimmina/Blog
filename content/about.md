@@ -10,9 +10,6 @@ using the same known technologies for everything.\
 I also contribute to open-source, In 2022 I participated in [Google Summer Of Code][GSoC] during
 which I made [a major contribution][blog] to [CoreDNS][coredns].
 
-
-
-
 # Find me
 
 * [Github][Github]
