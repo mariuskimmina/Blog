@@ -6,6 +6,8 @@ tags: [DNS, Infra]
 published: true
 ---
 
+Are you a Developer? Have you ever needed to setup DNS over TLS for your Domain Nameserver?
+
 This post introduces a new CoreDNS Plugin that allows for fully automatic TLS certificates in CoreDNS. No more worrying about
 expiring certificates and no need to setup external programms such as certbot. CoreDNS can handle it all for you. \
 TLDR: https://github.com/mariuskimmina/coredns-tlsplus
@@ -162,9 +164,11 @@ There are more ways in which CoreDNS and the ACME protocol could be used for cer
 
 ## Final Words
 This Plugin was created as part of the 2022 Google Summer of Code. As a student I had made some small contributions to open-source projects here and there 
-but nothing that comes even close to the scale of this project. I want to thank my mentors Yong Tang and Paul Greenberg who guided me on this journey and 
-I would recommended anyone who wants to get started in open-source development to apply for the next Google Summer of Code. Due to my mentors I was not 
-only able to make a major contribution to CoreDNS but they also taught me a lot about the economics of open-source technologies. The lessons I learned during these
+but nothing that comes even close to the scale of this project. Participating in GSoC helped empower me to focus on a project all the way from start to finish,
+which is something not just me but a lot of people struggle with. If you always wanted to have an impact on open-source software but could not never commit
+yourself to a side project long enough, consider participating in next years Google Summer of Code
+
+I want to thank my mentors Yong Tang and Paul Greenberg who guided me on this journey. Due to them I was not only able to make a major contribution to CoreDNS but they also taught me a lot about the economics of open-source technologies. The lessons I learned during these
 months will without a doubt be useful for many years to come.
 
 ## References
