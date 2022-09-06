@@ -89,7 +89,7 @@ The following is a straightforward example configuration for a CoreDNS server th
 this example assumes that there are two host under `mydomain.com` one is a website, reachable at `mydomain.com` directly. The other one is 
 a CoreDNS server that's running at `ns1.mydomain.com`.
 
-With this configuration, the DNS server answer queries over both UDP and DoT. On first start-up the server will obtain a certificate forget `n1.mydomain.com`. This certificate will automatically be renewed once more than 70% of it's validity period have passed.
+With this configuration, the DNS server answer queries over both UDP and DoT. On first start-up the server will obtain a certificate for `n1.mydomain.com`. This certificate will automatically be renewed once more than 70% of it's validity period have passed.
 
 ```
 tls://mydomain.com {
