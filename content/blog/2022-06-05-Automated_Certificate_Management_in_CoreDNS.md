@@ -38,14 +38,18 @@ Cloudflare's 1.1.1.1 Servers.
 Once you have such a forwarder setup with this plugin you can just forget about it since the certificate renewal is going to happen automatically. 
 
 ## How it works
-On startup the plugin first checks if it already has a valid certificate, if it does there is nothing to do and the CoreDNS server will start. If it doesn't (or if the certificate will expire soon) then it will initialize the ACME DNS Challenge and ask Let's Encrypt (assuming you didn't configure another CA) for a Certificate for the domain you configured  (assume it's  `ns1.example.com`). The plugin will also start to serve DNS requests on port 53. Let's Encrypt receives our request and sends out DNS requests for `_acme-challenge.example.com`. Since CoreDNS is supposed to be setup as the autoritative DNS server for `example.com`, these requests will reach us. The Plugin can answer those requests and in return receiv a valid certificate for `ns1.example.com`.
+This plugin utilizes the [ACME](https://letsencrypt.org/how-it-works/) protocol to obtain certificates from a CA such as Let's Encrypt  
+
+On startup the plugin first checks if it already has a valid certificate, if it does there is nothing to do and the CoreDNS server will start. If it doesn't (or if the certificate will expire soon) then it will initialize the ACME DNS Challenge and ask Let's Encrypt (assuming you didn't configure another CA) for a Certificate for the domain you configured  (assume it's  `ns1.example.com`). 
+
+The plugin will also start to serve DNS requests on port 53. Let's Encrypt receives our request and sends out DNS requests for `_acme-challenge.example.com`. Since CoreDNS is supposed to be setup as the autoritative DNS server for `example.com`, these requests will reach us. The Plugin can answer those requests and in return receiv a valid certificate for `ns1.example.com`.
 
 ![image](/blog/tlsplus/how-it-works.png "Plugin flow")
 
 Furthermore, the plugin then starts a loop that runs in the background and checks if the certificate is about to expire. If it is, CoreDNS will initialize a restart which in turn leads to the plugin setup being executed again, which leads to a new certificate being obtained.
 
 ## Requirements
-This plugin uses [ACME][ACME] to obtain and renew certificates. In order for this to work you need to do the following:
+This plugin uses [ACME][ACME] to obtain and renew certificates. In order for this to work you need the following:
 * Own a domain
 * Setup CoreDNS on a publicly reachable IP
 * Setup CoreDNS as the authoritative DNS server for that domain
