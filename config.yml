@@ -39,7 +39,7 @@ params:
       url: "https://app.hackthebox.com/profile/36525"
   profileMode:
     enabled: true
-    subtitle: "Being Currious"
+    subtitle: "Building IT-Infrastructure that scales, contributing to open-source software, never stop learning"
     imageUrl: "/profile/pic4.jpg" # optional
     imageTitle: "alt text" # optional
       #imageWidth: 120 # custom size
