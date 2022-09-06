@@ -23,7 +23,7 @@ TLDR: https://github.com/mariuskimmina/coredns-tlsplus
 
 
 ## Who should use this plugin and when?
-First of all, using this plugin makes it really easy to setup DNS over TLS or DNS over HTTPS. If you are a Developer who wants to setup a DNS server with encryption, you can do this easily. You shouldn't need to be SRE or any other kind of infrastructure expert to set this up. 
+First of all, using this plugin makes it really easy to setup DNS over TLS or DNS over HTTPS. If you are a Developer who wants to setup a DNS server with encryption, you can do this easily. You shouldn't need to be a SRE or any other kind of infrastructure expert to set this up. 
 
 As to when you want to use this pluign, there are 2 cases in which this plugin might help you tremendously. 
 
