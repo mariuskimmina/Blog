@@ -89,6 +89,8 @@ The following is a straightforward example configuration for a CoreDNS server th
 this example assumes that there are two host under `mydomain.com` one is a website, reachable at `mydomain.com` directly. The other one is 
 a CoreDNS server that's running at `ns1.mydomain.com`.
 
+With this configuration, the DNS server answer queries over both UDP and DoT. On first start-up the server will obtain a certificate forget `n1.mydomain.com`. This certificate will automatically be renewed once more than 70% of it's validity period have passed.
+
 ```
 tls://mydomain.com {
     tls acme {
@@ -116,7 +118,7 @@ setup such a forwarding server can be useful in restrictive environments where t
 people from encrypting their DNS traffic.
 
 With the use of this new plugin, you can setup such a server and completly forget about it since the plugin will handle all 
-certificates renewals for you.
+certificate renewals for you.
 
 ```
 tls://.:8853 {
