@@ -115,6 +115,9 @@ Notice that this DNS Server listens on a custom port, 8853, while the standard p
 setup such a forwarding server can be useful in restrictive environments where the port 853 may be blocked to prevent
 people from encrypting their DNS traffic.
 
+With the use of this new plugin, you can setup such a server and completly forget about it since the plugin will handle all 
+certificates renewals for you.
+
 ```
 tls://.:8853 {
     tls acme {
