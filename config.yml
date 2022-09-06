@@ -33,6 +33,8 @@ params:
       url: "https://www.linkedin.com/in/marius-kimmina/"
     - name: "stackoverflow"
       url: "https://stackoverflow.com/users/13693791"
+    - name: "goodreads"
+      url: "https://goodreads.com/mariuskimmina"
     - name: "hackthebox"
       url: "https://app.hackthebox.com/profile/36525"
   profileMode:
