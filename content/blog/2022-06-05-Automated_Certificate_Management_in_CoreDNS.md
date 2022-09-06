@@ -51,10 +51,10 @@ The plugin will also start to serve DNS requests on port 53. Let's Encrypt recei
 Furthermore, the plugin then starts a loop that runs in the background and checks if the certificate is about to expire. If it is, CoreDNS will initialize a restart which in turn leads to the plugin setup being executed again, which leads to a new certificate being obtained.
 
 ## Requirements
-This plugin uses [ACME][ACME] to obtain and renew certificates. In order for this to work you need the following:
+In order for this plugin to work you need the following:
 * Own a domain
 * Setup CoreDNS on a publicly reachable IP
-* Setup CoreDNS as the authoritative DNS server for that domain
+* Setup CoreDNS as the [authoritative DNS server](https://en.wikipedia.org/wiki/Name_server#Authoritative_name_server) for that domain
 * Port 53 - While CoreDNS may serve DNS over TLS on any port, during startup the plugin will use port 53 to solve the ACME Challenge
 
 To learn more about how to setup an authoritative DNS server, take a look at my other article about [adventours in selfhosting autoritative DNS servers].
