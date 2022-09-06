@@ -92,7 +92,7 @@ a CoreDNS server that's running at `ns1.mydomain.com`.
 ```
 tls://mydomain.com {
     tls acme {
-        domain *.mydomain.com
+        domain ns1.mydomain.com
     }
     hosts {
         xxx.xxx.xxx.xxx mydomain.com
@@ -108,12 +108,15 @@ mydomain.com {
 }
 ```
 
-As you can see in this line `domain *.mydomain.com` we can obtain wildcard certificates with this method. 
-
 ### forwarding Corefile
+This Corefile forwards all DNS over TLS requests to 9.9.9.9, the DNS Server of [quad9](https://www.quad9.net/). 
+
+Notice that this DNS Server listens on a custom port, 8853, while the standard port for DoT is 853. Being able to 
+setup such a forwarding server can be useful in restrictive environments where the port 853 may be blocked to prevent
+people from encrypting their DNS traffic.
 
 ```
-tls://. {
+tls://.:8853 {
     tls acme {
         domain ns1.mydomain.com
     }
