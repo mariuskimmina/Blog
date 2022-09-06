@@ -153,6 +153,9 @@ For the most part, dns server should be setup with some redundancy. If you want 
 the same Certificate. This can be achivied using a shared filesystem, like NFS, and pointing the `certpath` of all your CoreDNS Server to a location on this shared
 fileystem.
 
+I have tested such a cluster setup by running two CoreDNS instances on different Servers from DigitalOcean, following [this guide](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-18-04) made
+setting up NFS between them easy and worked right away.
+
 ```
 tls acme {
     domain ns1.mydomain.com
