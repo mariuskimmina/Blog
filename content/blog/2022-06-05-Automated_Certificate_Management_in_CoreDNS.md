@@ -98,16 +98,6 @@ tls://mydomain.com {
     }
 }
 
-https://mydomain.com {
-    tls acme {
-        domain ns1.mydomain.com
-    }
-    hosts {
-        xxx.xxx.xxx.xxx mydomain.com
-        xxx.xxx.xxx.xxx ns1.mydomain.com
-    }
-}
-
 mydomain.com {
     hosts {
         xxx.xxx.xxx.xxx mydomain.com
@@ -126,15 +116,6 @@ tls://. {
         domain ns1.mydomain.com
     }
     forward . tls://9.9.9.9 {
-        tls_servername dns.quad9.net
-    }
-}
-
-https://. {
-    tls acme {
-        domain ns1.mydomain.com
-    }
-    forward . https://9.9.9.9 {
         tls_servername dns.quad9.net
     }
 }
