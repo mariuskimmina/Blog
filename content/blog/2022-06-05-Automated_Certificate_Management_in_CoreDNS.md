@@ -19,6 +19,8 @@ TLDR: https://github.com/mariuskimmina/coredns-tlsplus
 4. [Setup](#setup)
 5. [Future Work](#future-work)
 6. [Final Words](#final-words)
+6. [References](#references)
+
 
 
 ## Who should use this plugin and when?
