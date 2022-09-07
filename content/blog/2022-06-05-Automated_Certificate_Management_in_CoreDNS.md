@@ -43,6 +43,8 @@ Instead of only answering queries about this particular domain we instead forwar
 
 This can be extremly useful if you want to hide your DNS traffic in very restrictive Environments. You can setup up such a forwarder on a custom port, such as 8853 instead of the usual 853 because in a restrictive environments that port may be blocked.
 
+Utilizing this plugin, you setup such a server once and then forget about it since the certificate will always be renewed automatically.
+
 
 ## How it works
 This plugin utilizes the [ACME](https://letsencrypt.org/how-it-works/) protocol to obtain certificates from a CA such as Let's Encrypt  
