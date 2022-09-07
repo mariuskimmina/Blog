@@ -31,11 +31,15 @@ As to when you want to use this pluign, there are 2 cases in which this plugin m
 * You work in a very restricted network and you need an encrypted DNS forwarder on a non-standard port
 
 ### authoritative DNS
-Since CoreDNS has to be the authoritative DNS Server for a domain to make this plugin work, the most obvious use case is to serve DNS over TLS or DNS over HTTPS for this particular domain. If you are the owner of `example.com` and you want to setup your own nameservers at `ns1.example.com` and `ns2.example.com`  for example (should never rely on a single nameserver) and you want to offer DNS over TLS or DNS over HTTPS then this plugin is for you! 
+Since CoreDNS has to be the authoritative DNS Server for a domain to make this plugin work, the most obvious use case is to serve DNS over TLS or DNS over HTTPS for this particular domain. 
+
+If you are the owner of `example.com` and you want to setup your own nameservers at `ns1.example.com` and `ns2.example.com` for example (more about setting up multiple DNS Servers later) and you want to offer DNS over TLS or DNS over HTTPS then this plugin is for you!
+
 
 ### Forwarding
-For this to work, the CoreNDS server still needs to be setup to be the authoriative DNS server for a domain. Instead of only
-answering queries about this particular domain we instead forward all DoT querys to an upstream DNS Resolver such Google's 8.8.8.8 or 
+For this to work, the CoreNDS server still needs to be setup to be the authoriative DNS server for a domain. 
+
+Instead of only answering queries about this particular domain we instead forward all DoT querys to an upstream DNS Resolver such Google's 8.8.8.8 or 
 Cloudflare's 1.1.1.1 Servers.
 Once you have such a forwarder setup with this plugin you can just forget about it since the certificate renewal is going to happen automatically. 
 
@@ -57,7 +61,7 @@ In order for this plugin to work you need the following:
 * Setup CoreDNS as the [authoritative DNS server](https://en.wikipedia.org/wiki/Name_server#Authoritative_name_server) for that domain
 * Port 53 - While CoreDNS may serve DNS over TLS on any port, during startup the plugin will use port 53 to solve the ACME Challenge
 
-To learn more about how to setup an authoritative DNS server, take a look at [this article](https://hugopeixoto.net/articles/self-hosting-nameservers.html) from [Hugo Peixoto](https://hugopeixoto.net/about.html). Or [this article that also uses CoreDNS](https://www.gophp.io/run-your-own-nameservers-with-coredns/).
+To learn more about how to setup an authoritative DNS server, take a look at [this article](https://hugopeixoto.net/articles/self-hosting-nameservers.html) from [Hugo Peixoto](https://hugopeixoto.net/about.html) or [this article that also uses CoreDNS](https://www.gophp.io/run-your-own-nameservers-with-coredns/).
 Also, if you need a general refresher on how DNS works, [here is my favourite ressource][comic]
 
 ## Setup
