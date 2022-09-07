@@ -3,7 +3,7 @@ title: Adventours in selfhosting DNS
 author: Marius Kimmina
 date: 2022-07-01 14:10:00 +0800
 tags: [DNS, Infra]
-published: true
+published: false
 ---
 
 
