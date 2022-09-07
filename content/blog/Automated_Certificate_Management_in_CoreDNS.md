@@ -11,7 +11,7 @@ Have you ever had to setup [DNS over TLS](https://www.cloudflare.com/learning/dn
 As a Developer who normally doesn't put too much thought into infrastructure related topics, that can be a daunting task.
 
 This post introduces a new CoreDNS Plugin that allows for fully automatic TLS certificates in CoreDNS. No more worrying about
-expiring certificates and no need to setup external programms such as certbot. CoreDNS can handle it all for you. \
+expiring certificates and no need to setup external programms such as certbot. CoreDNS can handle it all for you.
 
 TLDR: https://github.com/mariuskimmina/coredns-tlsplus
 
