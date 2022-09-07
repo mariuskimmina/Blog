@@ -172,7 +172,7 @@ but nothing that comes even close to the scale of this project. Participating in
 which is something not just me but a lot of people struggle with. If you always wanted to have an impact on open-source software but could not never commit
 yourself to a side project long enough, consider participating in next years Google Summer of Code
 
-I want to thank my mentors Yong Tang and Paul Greenberg who guided me on this journey. Due to them I was not only able to make a major contribution to CoreDNS but they also taught me a lot about the economics of open-source technologies. The lessons I learned during these
+I want to thank my mentors [Yong Tang](https://www.linkedin.com/in/yong-tang/) and [Paul Greenberg](https://www.linkedin.com/in/greenpau/) who guided me on this journey. Due to them I was not only able to make a major contribution to CoreDNS but they also taught me a lot about the economics of open-source technologies. The lessons I learned during these
 months will without a doubt be useful for many years to come.
 
 ## References
