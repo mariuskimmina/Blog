@@ -37,11 +37,12 @@ If you are the owner of `example.com` and you want to setup your own nameservers
 
 
 ### Forwarding
-For this to work, the CoreNDS server still needs to be setup to be the authoriative DNS server for a domain. 
+For this to work, the CoreDNS server still needs to be setup to be the authoriative DNS server for a domain. 
 
-Instead of only answering queries about this particular domain we instead forward all DoT querys to an upstream DNS Resolver such Google's 8.8.8.8 or 
-Cloudflare's 1.1.1.1 Servers.
-Once you have such a forwarder setup with this plugin you can just forget about it since the certificate renewal is going to happen automatically. 
+Instead of only answering queries about this particular domain we instead forward all DoT querys to an upstream DNS Resolver such Google's 8.8.8.8 or Cloudflare's 1.1.1.1 Servers.
+
+This can be extremly useful if you want to hide your DNS traffic in very restrictive Environments. You can setup up such a forwarder on a custom port, such as 8853 instead of the usual 853 because in a restrictive environments that port may be blocked.
+
 
 ## How it works
 This plugin utilizes the [ACME](https://letsencrypt.org/how-it-works/) protocol to obtain certificates from a CA such as Let's Encrypt  
