@@ -58,7 +58,7 @@ In order for this plugin to work you need the following:
 * Port 53 - While CoreDNS may serve DNS over TLS on any port, during startup the plugin will use port 53 to solve the ACME Challenge
 
 To learn more about how to setup an authoritative DNS server, take a look at [this article](https://hugopeixoto.net/articles/self-hosting-nameservers.html) from [Hugo Peixoto](https://hugopeixoto.net/about.html). Or [this article that also uses CoreDNS](https://www.gophp.io/run-your-own-nameservers-with-coredns/).
-Also, if you need a general refresher on how DNS works, take a look at [this comic][comic]
+Also, if you need a general refresher on how DNS works, [here is my favourite ressource][comic]
 
 ## Setup
 The goal is to have this plugin integrated into the main CoreDNS repository, once that happens there wont be any setup requirements.
