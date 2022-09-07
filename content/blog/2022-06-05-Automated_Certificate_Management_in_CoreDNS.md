@@ -57,7 +57,7 @@ In order for this plugin to work you need the following:
 * Setup CoreDNS as the [authoritative DNS server](https://en.wikipedia.org/wiki/Name_server#Authoritative_name_server) for that domain
 * Port 53 - While CoreDNS may serve DNS over TLS on any port, during startup the plugin will use port 53 to solve the ACME Challenge
 
-To learn more about how to setup an authoritative DNS server, take a look at my other article about [adventours in selfhosting autoritative DNS servers].
+To learn more about how to setup an authoritative DNS server, take a look at [this article](https://hugopeixoto.net/articles/self-hosting-nameservers.html) from [Hugo Peixoto](https://hugopeixoto.net/about.html).
 Also, if you need a general refresher on how DNS works, take a look at [this comic][comic]
 
 ## Setup
