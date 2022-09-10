@@ -1,5 +1,5 @@
 ---
-title: Introducing Automated TLS Certificates in CoreDNS
+title: WIP: Introducing Automated TLS Certificates in CoreDNS
 author: Marius Kimmina
 date: 2022-09-02 14:10:00 +0800
 tags: [DNS, Infra]
@@ -16,6 +16,10 @@ expiring certificates and no need to setup external programms such as certbot. C
 TLDR: https://github.com/mariuskimmina/coredns-tlsplus
 
 ## Table of Contents
+1. [Managing Certificates before ACME]
+2. [Introduction of ACME]
+3. [Integration of ACME into Caddy]
+4. [ACME for DNS Server]
 1. [Who should use this plugin and when?](#who-should-use-this-plugin-and-when)
 2. [How it works](#how-it-works)
 3. [Requirements](#requirements)
@@ -24,6 +28,23 @@ TLDR: https://github.com/mariuskimmina/coredns-tlsplus
 6. [Final Words](#final-words)
 6. [References](#references)
 
+## Managing Certificates before ACME
+Back in the days, before let's encrypt was a thing, obtaining and renewing TLS certificates required a lot of work. 
+To be more percise, one had to go to all of these steps to successfully manage TLS certificates
+
+* ...
+
+## Introduction of ACME
+When let's encrypt came around, things changed drastically. They simplified getting a certificated into the following steps
+
+* Install certbot
+* ... 
+
+## Integration of ACME into Caddy
+
+
+## ACME for DNS Server
+![image](/blog/tlsplus/how-it-works.png "Plugin flow")
 
 
 ## Who should use this plugin and when?
@@ -57,7 +78,6 @@ On startup the plugin first checks if it already has a valid certificate, if it 
 
 The plugin will also start to serve DNS requests on port 53. Let's Encrypt receives our request and sends out DNS requests for `_acme-challenge.example.com`. Since CoreDNS is supposed to be setup as the autoritative DNS server for `example.com`, these requests will reach us. The Plugin can answer those requests and in return receiv a valid certificate for `ns1.example.com`.
 
-![image](/blog/tlsplus/how-it-works.png "Plugin flow")
 
 Furthermore, the plugin then starts a loop that runs in the background and checks if the certificate is about to expire. If it is, CoreDNS will initialize a restart which in turn leads to the plugin setup being executed again, which leads to a new certificate being obtained.
 
