@@ -20,13 +20,13 @@ TLDR: https://github.com/mariuskimmina/coredns-tlsplus
 2. [Introduction of ACME]
 3. [Integration of ACME into Caddy]
 4. [ACME for DNS Server]
-1. [Who should use this plugin and when?](#who-should-use-this-plugin-and-when)
-2. [How it works](#how-it-works)
-3. [Requirements](#requirements)
-4. [Setup](#setup)
-5. [Future Work](#future-work)
-6. [Final Words](#final-words)
-6. [References](#references)
+5. [Who should use this plugin and when?](#who-should-use-this-plugin-and-when)
+6. [How it works](#how-it-works)
+7. [Requirements](#requirements)
+8. [Setup](#setup)
+9. [Future Work](#future-work)
+10. [Final Words](#final-words)
+11. [References](#references)
 
 ## Managing Certificates before ACME
 Back in the days, before let's encrypt was a thing, obtaining and renewing TLS certificates required a lot of work. 
