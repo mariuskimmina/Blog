@@ -48,6 +48,8 @@ To be more percise, one had to go to all of these steps to successfully manage T
 * Reload configuration
 * Don't forget to renew it
 
+(I never had to go through this myself, god bless, thus I have taken this list from [someone who did](https://www.youtube.com/watch?v=KdX51QJWQTA))
+
 ## Introduction of ACME
 When let's encrypt came around, things changed drastically. They simplified getting a certificated into the following steps
 
