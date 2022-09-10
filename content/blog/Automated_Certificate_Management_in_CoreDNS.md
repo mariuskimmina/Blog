@@ -30,9 +30,23 @@ TLDR: https://github.com/mariuskimmina/coredns-tlsplus
 
 ## Managing Certificates before ACME
 Back in the days, before let's encrypt was a thing, obtaining and renewing TLS certificates required a lot of work. 
-To be more percise, one had to go to all of these steps to successfully manage TLS certificates
+To be more percise, one had to go to all of these steps to successfully manage TLS certificates 
 
-* ...
+* Generate Private Key
+* Generate CSR
+* Secure Key
+* Order SSL certificate
+* Paste CSR into online form
+* Choose an email address 
+* Wait for email
+* Click link in email
+* Wait for another email
+* Download certificate
+* Concat into bundle 
+* Upload to server
+* Configure server
+* Reload configuration
+* Don't forget to renew it
 
 ## Introduction of ACME
 When let's encrypt came around, things changed drastically. They simplified getting a certificated into the following steps
