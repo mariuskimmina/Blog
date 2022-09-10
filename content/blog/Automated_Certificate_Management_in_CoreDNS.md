@@ -16,10 +16,10 @@ expiring certificates and no need to setup external programms such as certbot. C
 TLDR: https://github.com/mariuskimmina/coredns-tlsplus
 
 ## Table of Contents
-1. [Managing Certificates before ACME]
-2. [Introduction of ACME]
-3. [Integration of ACME into Caddy]
-4. [ACME for DNS Server]
+1. [Managing Certificates before ACME](#managing-certificates-before-acme)
+2. [Introduction of ACME](#introduction-of-acme)
+3. [Integration of ACME into Caddy](#integration-of-acme-into-caddy)
+4. [ACME for DNS Server](#acme-for-dns-server)
 5. [Who should use this plugin and when?](#who-should-use-this-plugin-and-when)
 6. [How it works](#how-it-works)
 7. [Requirements](#requirements)
