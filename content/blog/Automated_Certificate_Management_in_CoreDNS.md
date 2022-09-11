@@ -54,7 +54,8 @@ To be more percise, one had to go to all of these steps to successfully manage T
 When let's encrypt came around, things changed drastically. They simplified getting a certificated into the following steps
 
 * Install certbot
-* ... 
+* Run a certbot command (`sudo certbot certonly --standalone`)
+* Configure your application
 
 ## Integration of ACME into Caddy
 
