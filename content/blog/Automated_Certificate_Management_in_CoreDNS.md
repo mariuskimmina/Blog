@@ -60,12 +60,12 @@ When let's encrypt came around, things changed drastically. They simplified gett
 ## Integration of ACME into Caddy
 In 2018 the [Webserver Caddy](https://caddyserver.com/) introduced [HTTPS by default](https://caddyserver.com/docs/automatic-https). 
 
-To achieve this, caddy itself acts as an ACME client, removing the need of a programm like `certbot`.
+To achieve this, caddy itself acts as an ACME client, removing the need of a programm like `certbot` to be installed. 
+While `certbot` already made things easy, there was still some room for error. 
 
 The steps for obtaining and using a TLS certificate with caddy are as follows:
 
 * Configure your application
-
 
 ## ACME for DNS Server
 ![image](/blog/tlsplus/how-it-works.png "Plugin flow")
