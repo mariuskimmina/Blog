@@ -40,7 +40,7 @@ params:
   profileMode:
     enabled: true
       #subtitle: "I'm building IT-Infrastructure that scales, contribute to open-source software and am always looking to learn something new"
-    subtitle: "Happy but never satisfied"
+    subtitle: "Be happy but never satisfied"
     imageUrl: "/profile/pic4.jpg" # optional
     imageTitle: "alt text" # optional
       #imageWidth: 120 # custom size
