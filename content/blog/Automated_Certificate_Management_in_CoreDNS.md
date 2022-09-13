@@ -62,8 +62,10 @@ They simplified obtaining a signed certificate for your domain into the followin
 According to [their own stats](https://letsencrypt.org/stats/) there are close 300M Domains that use certificates issued 
 by Let's Encrypt.
 
-The use of HTTPS has increased rappidly ever since their launch. They took the human out of the loop and by building
-a certificate authority that could validate your domain ownership fully automatically. 
+The use of HTTPS has increased rappidly ever since their launch. They took the human out of the loop by building
+a certificate authority that could validate your domain ownership fully automatically. They created a client-server
+protocol called [ACME](https://letsencrypt.org/how-it-works/), which has become an open standard. 
+Let's Encrypt (or other CAs) provide an ACME server with which any client (e.g. `certbot`) can use to obtain a certificate.  
 
 ## Integration of ACME into Caddy
 In 2015 the [Webserver Caddy](https://caddyserver.com/) introduced [HTTPS by default](https://caddyserver.com/docs/automatic-https). 
