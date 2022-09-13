@@ -72,13 +72,18 @@ Now, the idea was that this idea that originated in caddy could also be applied 
 
 Especially when the DNS server is actually itself the authoritative DNS server for a domain, then it should
 be possible for this server to obtain a certificate for this domain. That's excatly what I did and the DNS server
-I did it for is CoreDNS(https://github.com/coredns/coredns). 
+I did it for is [CoreDNS](https://github.com/coredns/coredns). 
 
 CoreDNS has a plugin architecture, which means that the server by itself provides only a bare minimum of functionaliy.
 The user then adds plugins to make CoreDNS fit his use case. I have adjusted the `tls` plugin so that it can act as an 
 ACME client and requests certificates from Let's Encrypt (or other CAs).
 ![image](/blog/tlsplus/how-it-works.png "Plugin flow")
 
+Certificates that are obtained this way will also automatically be renewed once more than 70% of their validity period
+have passed, just like certbot would do. There is a significan't advantage here tho, since CoreDNS has to be restarted to
+work with new certificates, using a new certificate from certbot still required a manual restart of CoreDNS. This new 
+tls plugin is performing this restart for you and allows administrators to completly forget about managing certificates for 
+CoreDNS.
 
 ## Who should use this plugin and when?
 First of all, using this plugin makes it really easy to setup DNS over TLS or DNS over HTTPS. If you are a Developer who wants to setup a DNS server with encryption, you can do this easily. You shouldn't need to be a SRE or any other kind of infrastructure expert to set this up. 
