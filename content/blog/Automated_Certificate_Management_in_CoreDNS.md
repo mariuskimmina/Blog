@@ -67,6 +67,11 @@ The steps for obtaining and using a TLS certificate with caddy are as follows:
 
 * Configure your application
 
+No need to install any other applications you just have to setup caddy to serve on the domain that you want a certificate for 
+and it will obtain (and renew) it's certificate. This also made the entire process even more reliable, since it eliminiated 
+the need for `certbot` and the server to work together.
+
+
 ## ACME for DNS Server
 Now, the idea was that this idea that originated in caddy could also be applied to DNS servers. 
 
