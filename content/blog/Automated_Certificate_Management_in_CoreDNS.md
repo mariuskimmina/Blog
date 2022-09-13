@@ -48,7 +48,7 @@ To be more percise, one had to go to all of these steps to successfully manage T
 * Reload configuration
 * Don't forget to renew it
 
-(I never had to go through this myself, god bless, thus I have taken this list from [someone who did](https://www.youtube.com/watch?v=KdX51QJWQTA))
+(Luckily, I never had to go through this myself, thus I have taken this list from [someone who did](https://www.youtube.com/watch?v=KdX51QJWQTA))
 
 ## Introduction of ACME
 When let's encrypt came around, things changed drastically. They simplified getting a certificated into the following steps
@@ -68,6 +68,15 @@ The steps for obtaining and using a TLS certificate with caddy are as follows:
 * Configure your application
 
 ## ACME for DNS Server
+Now, the idea was that this idea that originated in caddy could also be applied to DNS servers. 
+
+Especially when the DNS server is actually itself the authoritative DNS server for a domain, then it should
+be possible for this server to obtain a certificate for this domain. That's excatly what I did and the DNS server
+I did it for is CoreDNS(https://github.com/coredns/coredns). 
+
+CoreDNS has a plugin architecture, which means that the server by itself provides only a bare minimum of functionaliy.
+The user then adds plugins to make CoreDNS fit his use case. I have adjusted the `tls` plugin so that it can act as an 
+ACME client and requests certificates from Let's Encrypt (or other CAs).
 ![image](/blog/tlsplus/how-it-works.png "Plugin flow")
 
 
