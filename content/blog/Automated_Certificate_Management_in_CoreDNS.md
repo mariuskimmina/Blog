@@ -71,6 +71,8 @@ No need to install any other applications you just have to setup caddy to serve 
 and it will obtain (and renew) it's certificate. This also made the entire process even more reliable, since it eliminiated 
 the need for `certbot` and the server to work together.
 
+![image](/blog/tlsplus/how-it-works-caddy.png "ACME in Caddy flow")
+
 
 ## ACME for DNS Server
 Now, the idea was that this idea that originated in caddy could also be applied to DNS servers. 
