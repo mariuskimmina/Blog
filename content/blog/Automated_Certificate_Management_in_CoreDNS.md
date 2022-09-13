@@ -84,7 +84,7 @@ I did it for is [CoreDNS](https://github.com/coredns/coredns).
 CoreDNS has a plugin architecture, which means that the server by itself provides only a bare minimum of functionaliy.
 The user then adds plugins to make CoreDNS fit his use case. I have adjusted the `tls` plugin so that it can act as an 
 ACME client and requests certificates from Let's Encrypt (or other CAs).
-![image](/blog/tlsplus/how-it-works.png "Plugin flow")
+![image](/blog/tlsplus/how-it-works.png "CoreDNS Plugin flow")
 
 Certificates that are obtained this way will also automatically be renewed once more than 70% of their validity period
 have passed, just like certbot would do. There is a significan't advantage here tho, since CoreDNS has to be restarted to
@@ -168,20 +168,20 @@ a CoreDNS server that's running at `ns1.mydomain.com`.
 With this configuration, the DNS server answer queries over both UDP and DoT. On first start-up the server will obtain a certificate for `n1.mydomain.com`. This certificate will automatically be renewed once more than 70% of it's validity period have passed.
 
 ```
-tls://mydomain.com {
+tls://example.com {
     tls acme {
-        domain ns1.mydomain.com
+        domain ns1.example.com
     }
     hosts {
-        xxx.xxx.xxx.xxx mydomain.com
-        xxx.xxx.xxx.xxx ns1.mydomain.com
+        xxx.xxx.xxx.xxx example.com
+        xxx.xxx.xxx.xxx ns1.example.com
     }
 }
 
-mydomain.com {
+example.com {
     hosts {
-        xxx.xxx.xxx.xxx mydomain.com
-        xxx.xxx.xxx.xxx ns1.mydomain.com
+        xxx.xxx.xxx.xxx example.com
+        xxx.xxx.xxx.xxx ns1.example.com
     }
 }
 ```
@@ -199,17 +199,17 @@ certificate renewals for you.
 ```
 tls://.:8853 {
     tls acme {
-        domain ns1.mydomain.com
+        domain ns1.example.com
     }
     forward . tls://9.9.9.9 {
         tls_servername dns.quad9.net
     }
 }
 
-mydomain.com {
+example.com {
     hosts {
-        xxx.xxx.xxx.xxx mydomain.com
-        xxx.xxx.xxx.xxx ns1.mydomain.com
+        xxx.xxx.xxx.xxx example.com
+        xxx.xxx.xxx.xxx ns1.example.com
     }
 }
 ```
@@ -225,7 +225,7 @@ setting up NFS between them easy and worked right away.
 
 ```
 tls acme {
-    domain ns1.mydomain.com
+    domain ns1.example.com
     certpath /some/path/on/nfs/certs/
 }
 ```
