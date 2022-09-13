@@ -51,11 +51,19 @@ To be more percise, one had to go to all of these steps to successfully manage T
 (Luckily, I never had to go through this myself, thus I have taken this list from [someone who did](https://www.youtube.com/watch?v=KdX51QJWQTA))
 
 ## Introduction of ACME
-When let's encrypt came around, things changed drastically. They simplified getting a certificated into the following steps
+When [Let's Encrypt](https://letsencrypt.org/) came around, things changed drastically. 
+
+They simplified obtaining a signed certificate for your domain into the following steps
 
 * Install certbot
 * Run a certbot command (`sudo certbot certonly --standalone`)
 * Configure your application
+
+According to [their own stats](https://letsencrypt.org/stats/) there are close 300M Domains that use certificates issued 
+by Let's Encrypt.
+
+The use of HTTPS has increased rappidly ever since their launch. They took the human out of the loop and by building
+a certificate authority that could validate your domain ownership fully automatically. 
 
 ## Integration of ACME into Caddy
 In 2015 the [Webserver Caddy](https://caddyserver.com/) introduced [HTTPS by default](https://caddyserver.com/docs/automatic-https). 
