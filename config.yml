@@ -39,8 +39,7 @@ params:
       url: "https://app.hackthebox.com/profile/36525"
   profileMode:
     enabled: true
-      #subtitle: "I'm building IT-Infrastructure that scales, contribute to open-source software and am always looking to learn something new"
-    subtitle: "Be happy but never satisfied"
+    subtitle: "Building IT-Infrastructure | Contribute to open-source | Always learning something new"
     imageUrl: "/profile/pic4.jpg" # optional
     imageTitle: "alt text" # optional
       #imageWidth: 120 # custom size
