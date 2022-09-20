@@ -55,7 +55,8 @@ certificates for their personal websites or blogs. Most people probably would ha
 the effort to get in touch with a CA and also having to pay for it was just not worth it to most people.
 
 Charging money for this kind of service made sense since the CA had to put in some effort to actually verify that you own
-a domain before you can get a certificate for it. 
+a domain before you can get a certificate for it. To bring the encryption of the web forward a better approach had to be invented
+that eliminated the need for manual ownership verification.
 
 ## Introduction of ACME
 When [Let's Encrypt](https://letsencrypt.org/) came around, things changed drastically. 
