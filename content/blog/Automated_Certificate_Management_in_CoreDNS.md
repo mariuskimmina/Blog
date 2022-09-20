@@ -305,15 +305,15 @@ months will without a doubt be useful for many years to come.
 ## References
 
 ### Articles and Docs
-https://zwischenzugs.com/2018/01/26/how-and-why-i-run-my-own-dns-servers/
-https://www.cloudflare.com/learning/dns/dns-over-tls/
-https://developers.google.com/speed/public-dns/docs/dns-over-tls
-https://letsencrypt.org/docs/challenge-types/
-https://www.joshmcguigan.com/blog/run-your-own-dns-servers/
-https://opensource.com/article/17/4/build-your-own-name-server
-https://educatedguesswork.org/posts/dns-security-adox/
-https://www.gophp.io/run-your-own-nameservers-with-coredns/
-https://hugopeixoto.net/articles/self-hosting-nameservers.html
+https://zwischenzugs.com/2018/01/26/how-and-why-i-run-my-own-dns-servers/  
+https://www.cloudflare.com/learning/dns/dns-over-tls/  
+https://developers.google.com/speed/public-dns/docs/dns-over-tls  
+https://letsencrypt.org/docs/challenge-types/  
+https://www.joshmcguigan.com/blog/run-your-own-dns-servers/  
+https://opensource.com/article/17/4/build-your-own-name-server  
+https://educatedguesswork.org/posts/dns-security-adox/  
+https://www.gophp.io/run-your-own-nameservers-with-coredns/  
+https://hugopeixoto.net/articles/self-hosting-nameservers.html  
 
 ### Open Source Software used
 CoreDNS: https://github.com/coredns/coredns  
