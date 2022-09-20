@@ -1,5 +1,5 @@
 ---
-title: WIP Introducing Automated TLS Certificates in CoreDNS
+title: Introducing Automated TLS Certificates in CoreDNS
 author: Marius Kimmina
 date: 2022-09-02 14:10:00 +0800
 tags: [DNS, Infra]
