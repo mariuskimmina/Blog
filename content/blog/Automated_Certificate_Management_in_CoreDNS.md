@@ -77,8 +77,10 @@ a service for free where others have been charging money for years, they were al
 To validate the domain ownership, you have to solve a challenge. The ACME server will provide you with a token that you can you can place either
 on the webserver, that's running on your domain or on the authoritative DNS server of your domain.  
 These challenges are called:
+
 * HTTP-01
 * DNS-01
+
 Solving either one of these will enable you to obtain a certificate for your domain. Only the DNS challenge will allow you to obtain wildcard certificates tho.
 
 According to [their own stats](https://letsencrypt.org/stats/) there are close 300M Domains that use certificates issued 
