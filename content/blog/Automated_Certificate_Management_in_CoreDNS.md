@@ -251,6 +251,8 @@ There are more ways in which CoreDNS and the ACME protocol could be used for cer
 * CoreDNS could provide an API to let solve the AMCE Challenge for other (web-)servers
 * CoreDNS could use the API of another DNS provider to obtain a certificate for domain without having to be the autoritative DNS server itself
 
+Caddy can also automatically perform local HTTPS by creating it's own trusted certificate chain. This feature could also be implemented in CoreDNS in the future.
+
 ## Final Words
 This Plugin was created as part of the 2022 [Google Summer of Code](https://summerofcode.withgoogle.com/). As a student I had made some small contributions to open-source projects here and there 
 but nothing that comes even close to the scale of this project. Participating in GSoC helped empower me to focus on a project all the way from start to finish,
