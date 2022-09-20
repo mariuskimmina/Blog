@@ -101,7 +101,8 @@ the need for `certbot` and the server to work together.
 Caddy was the first application ever to manage it's own certificates and has further revolutionized the use of encryption
 on the web. 
 
-
+Also, the librarys that enables automatic HTTPS in Caddy is called [certmagic](https://github.com/caddyserver/certmagic) and is open-source, meaning that you have no excuse
+not to provide HTTPS out of the box on your next web application written in Go.
 
 ## ACME for DNS Server
 Now, the idea was that this idea that originated in caddy could also be applied to DNS servers. 
