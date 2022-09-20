@@ -32,7 +32,7 @@ TLDR: https://github.com/mariuskimmina/coredns-tlsplus
 11. [References](#references)
 
 ## Managing Certificates before ACME
-Back in the days, before let's encrypt was a thing, obtaining and renewing TLS certificates required a lot of work. 
+Back in the days, before [Let's Encrypt](https://letsencrypt.org/) was a thing, obtaining and renewing TLS certificates required a lot of work. 
 To be more percise, one had to go to all of these steps to successfully manage TLS certificates 
 
 * Generate Private Key
@@ -311,6 +311,7 @@ https://developers.google.com/speed/public-dns/docs/dns-over-tls
 https://letsencrypt.org/docs/challenge-types/
 https://www.joshmcguigan.com/blog/run-your-own-dns-servers/
 https://opensource.com/article/17/4/build-your-own-name-server
+https://educatedguesswork.org/posts/dns-security-adox/
 https://www.gophp.io/run-your-own-nameservers-with-coredns/
 https://hugopeixoto.net/articles/self-hosting-nameservers.html
 
