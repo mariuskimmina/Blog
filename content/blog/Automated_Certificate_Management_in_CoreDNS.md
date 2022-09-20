@@ -61,7 +61,7 @@ They simplified obtaining a signed certificate for your domain into the followin
 * Run a certbot command (`sudo certbot certonly --standalone`)
 * Configure your application
 
-To achieve this, they created a client server protocol called [ACME](). This protocol allows them to verify the ownership of
+To achieve this, they created a client server protocol called [ACME](https://letsencrypt.org/how-it-works/). This protocol allows them to verify the ownership of
 a domain fully automatically. While old Certificate Authoritys had to manually ensure that the their client's actaully own a domain
 before issueing a certificate, Let's Encrypt was able to do this any time of the day and almost instantly. So, not only could they offer
 a service for free where others have been charging money for years, they were also much faster in issueing certificates than any traditional CA. 
