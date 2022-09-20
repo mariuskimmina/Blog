@@ -126,7 +126,7 @@ Especially when the DNS server is actually itself the authoritative DNS server f
 be possible for this server to obtain a certificate for this domain. That's excatly what I did and the DNS server
 I did it for is [CoreDNS](https://github.com/coredns/coredns). 
 
-![image](/blog/tlsplus/coredns-logo-smaller.png "CoreDNS logo")
+![image](/blog/tlsplus/coredns-logo-smallerer.png "CoreDNS logo")
 
 
 CoreDNS has a plugin architecture, which means that the server by itself provides only a bare minimum of functionaliy.
