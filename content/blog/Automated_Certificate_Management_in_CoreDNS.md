@@ -83,6 +83,10 @@ the need for `certbot` and the server to work together.
 
 ![image](/blog/tlsplus/how-it-works-caddy.png "ACME in Caddy flow")
 
+Caddy was the first application ever to manage it's own certificates and has further revolutionized the use of encryption
+on the web. 
+
+
 
 ## ACME for DNS Server
 Now, the idea was that this idea that originated in caddy could also be applied to DNS servers. 
@@ -124,6 +128,7 @@ Instead of only answering queries about this particular domain we instead forwar
 This can be extremly useful if you want to hide your DNS traffic in very restrictive Environments. You can setup up such a forwarder on a custom port, such as 8853 instead of the usual 853 because in a restrictive environments that port may be blocked.
 
 Utilizing this plugin, you setup such a server once and then forget about it since the certificate will always be renewed automatically.
+
 
 
 ## How it works
