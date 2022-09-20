@@ -148,7 +148,7 @@ As to when you want to use this pluign, there are 2 cases in which this plugin m
 * You want to setup an autoritative DNS server for your Domain and support DNS over TLS or DNS over HTTPS
 * You work in a very restricted network and you need an encrypted DNS forwarder on a non-standard port
 
-### authoritative DNS
+### Authoritative DNS
 Since CoreDNS has to be the authoritative DNS Server for a domain to make this plugin work, the most obvious use case is to serve DNS over TLS or DNS over HTTPS for this particular domain. 
 
 If you are the owner of `example.com` and you want to setup your own nameservers at `ns1.example.com` and `ns2.example.com` for example (more about setting up multiple DNS Servers later) and you want to offer DNS over TLS or DNS over HTTPS then this plugin is for you!
@@ -214,7 +214,7 @@ go mod tidy
 go build
 ```
 
-### authoritative Corefile
+### Authoritative Corefile
 
 The following is a straightforward example configuration for a CoreDNS server that is setup as the authoritative DNS Server for `mydomain.com`.
 this example assumes that there are two host under `mydomain.com` one is a website, reachable at `mydomain.com` directly. The other one is 
@@ -241,7 +241,7 @@ example.com {
 }
 ```
 
-### forwarding Corefile
+### Forwarding Corefile
 This Corefile forwards all DNS over TLS requests to 9.9.9.9, the DNS Server of [quad9](https://www.quad9.net/). 
 
 Notice that this DNS Server listens on a custom port, 8853, while the standard port for DoT is 853. Being able to 
