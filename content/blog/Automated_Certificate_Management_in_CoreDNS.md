@@ -53,7 +53,7 @@ To be more percise, one had to go to all of these steps to successfully manage T
 ## Introduction of ACME
 When [Let's Encrypt](https://letsencrypt.org/) came around, things changed drastically. 
 
-![image](/blog/tlsplus/le-logo.png "Let's Encrypt" =200x200)
+![image](/blog/tlsplus/le-logo.png "Let's Encrypt")
 
 They simplified obtaining a signed certificate for your domain into the following steps
 
