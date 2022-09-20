@@ -81,7 +81,7 @@ These challenges are called:
 * HTTP-01
 * DNS-01
 
-Solving either one of these will enable you to obtain a certificate for your domain. Only the DNS challenge will allow you to obtain wildcard certificates tho.
+Solving either one of these will enable you to obtain a certificate for your domain but only the DNS challenge will allow you to obtain wildcard certificates.
 
 According to [their own stats](https://letsencrypt.org/stats/) there are close 300M Domains that use certificates issued 
 by Let's Encrypt.
@@ -116,7 +116,8 @@ not to provide HTTPS out of the box on your next web application written in Go.
 ## ACME for DNS Server
 Now, the idea was that this idea that originated in caddy could also be applied to DNS servers.
 
-As you saw earlier, there are two types of challenges involved in ACME. Caddy is using the HTTP-01 challenge to obtain it's own certificate. So what about a DNS server that uses the DNS-01 challenge? 
+As you saw earlier, there are two types of challenges involved in ACME. Caddy is using the HTTP-01 challenge to obtain it's own certificate. 
+So what about a DNS server that uses the DNS-01 challenge? 
 
 Especially when the DNS server is actually itself the authoritative DNS server for a domain, then it should
 be possible for this server to obtain a certificate for this domain. That's excatly what I did and the DNS server
