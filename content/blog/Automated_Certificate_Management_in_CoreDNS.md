@@ -51,10 +51,11 @@ To be more percise, one had to go to all of these steps to successfully manage T
 (Luckily, I never had to go through this myself, thus I have taken this list from [someone who did](https://www.youtube.com/watch?v=KdX51QJWQTA))
 
 In those days, most CAs also charged money for signing certificates. As a result, many people didn't bother providing valid
-certificates for their personal websites or blogs.
+certificates for their personal websites or blogs. Most people probably would have liked to setup proper HTTPS for their site at the time but
+the effort to get in touch with a CA and also having to pay for it was just not worth it to most people.
 
 Charging money for this kind of service made sense since the CA had to put in some effort to actually verify that you own
-a domain before you can get a certificate for it.
+a domain before you can get a certificate for it. 
 
 ## Introduction of ACME
 When [Let's Encrypt](https://letsencrypt.org/) came around, things changed drastically. 
