@@ -13,7 +13,7 @@ As a Developer who normally doesn't put too much thought into infrastructure rel
 This post introduces a new CoreDNS Plugin that allows for fully automatic TLS certificates in CoreDNS. No more worrying about
 expiring certificates and no need to setup external programms such as certbot. CoreDNS can handle it all for you.
 
-The one requirement is that CoreDNS needs to be authoritative for an existing Domain so that it can obtain a valid certificate for that particular domain.
+The essential requirement is that CoreDNS needs to be authoritative for an existing Domain so that it can obtain a valid certificate for that particular domain.
 
 There is currently an [open PR](https://github.com/coredns/coredns/pull/5608) to integrate this plugin into CoreDNS, if and when these changes get merged I will update this post with
 new instructions, until then the plugin can already be used as an external plugin with a bit more upfront setup work.
