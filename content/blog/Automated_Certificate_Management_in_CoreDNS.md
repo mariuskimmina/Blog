@@ -114,7 +114,9 @@ Also, the librarys that enables automatic HTTPS in Caddy is called [certmagic](h
 not to provide HTTPS out of the box on your next web application written in Go.
 
 ## ACME for DNS Server
-Now, the idea was that this idea that originated in caddy could also be applied to DNS servers. 
+Now, the idea was that this idea that originated in caddy could also be applied to DNS servers.
+
+As you saw earlier, there are two types of challenges involved in ACME. Caddy is using the HTTP-01 challenge to obtain it's own certificate. So what about a DNS server that uses the DNS-01 challenge? 
 
 Especially when the DNS server is actually itself the authoritative DNS server for a domain, then it should
 be possible for this server to obtain a certificate for this domain. That's excatly what I did and the DNS server
