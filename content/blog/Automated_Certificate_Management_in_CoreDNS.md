@@ -290,7 +290,7 @@ tls acme {
 ## Futute work
 There are more ways in which CoreDNS and the ACME protocol could be used for certificate management. 
 
-* CoreDNS could provide an API to let solve the AMCE Challenge for other (web-)servers
+* CoreDNS could provide an API to let other ACME clients solve the AMCE challenge for other (web-)servers
 * CoreDNS could use the API of another DNS provider to obtain a certificate for domain without having to be the autoritative DNS server itself
 
 Caddy can also automatically perform local HTTPS by creating it's own trusted certificate chain. This feature could also be implemented in CoreDNS in the future.
