@@ -298,7 +298,7 @@ Caddy can also automatically perform local HTTPS by creating it's own trusted ce
 ## Final Words
 This Plugin was created as part of the 2022 [Google Summer of Code](https://summerofcode.withgoogle.com/). 
 
-![image](/blog/tlsplus/gsoc-image.jpg "Google Summer of Code")
+![image](/blog/tlsplus/gsoc-image.png "Google Summer of Code")
 
 As a student I had made some small contributions to open-source projects here and there 
 but nothing that comes even close to the scale of this project. Participating in GSoC helped empower me to focus on a project all the way from start to finish,
