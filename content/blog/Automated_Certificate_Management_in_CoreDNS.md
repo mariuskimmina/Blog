@@ -296,7 +296,11 @@ There are more ways in which CoreDNS and the ACME protocol could be used for cer
 Caddy can also automatically perform local HTTPS by creating it's own trusted certificate chain. This feature could also be implemented in CoreDNS in the future.
 
 ## Final Words
-This Plugin was created as part of the 2022 [Google Summer of Code](https://summerofcode.withgoogle.com/). As a student I had made some small contributions to open-source projects here and there 
+This Plugin was created as part of the 2022 [Google Summer of Code](https://summerofcode.withgoogle.com/). 
+
+![image](/blog/tlsplus/gsoc-image.jpg "Google Summer of Code")
+
+As a student I had made some small contributions to open-source projects here and there 
 but nothing that comes even close to the scale of this project. Participating in GSoC helped empower me to focus on a project all the way from start to finish,
 which is something not just me but a lot of people struggle with. If you always wanted to have an impact on open-source software but could not never commit
 yourself to a side project long enough, consider participating in next years Google Summer of Code
