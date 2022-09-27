@@ -291,10 +291,10 @@ tls acme {
 ## Challenges (not the ACME ones)
 Here I want to talk about obstacles I had to overcome and some things I could have done better during this project.
 
-The first lesson that I had to learn is that a simple design is (almost) always better. When a certificate needs to be renewed, my first thought was that the CoreDNS itself should first solve the challenge and obtain a certificate, then a restart should happen.  
+The first lesson that I had to learn is that **a simple design is (almost) always better**. When a certificate needs to be renewed, my first thought was that the CoreDNS itself should first solve the challenge and obtain a certificate, then a restart should happen.  
 The thing is, I already had this bootstrapped DNS server implemented to solve the challenge during the plugin setup. So I could just use this server, not just when CoreDNS is started for the first time, but everytime a certificate needs to be renewed.
 
-Another lesson was about using existing open-source librarys. The current implementation is using [certmaigc](https://github.com/caddyserver/certmagic) but that wasn't my original intention. At first I thought It would be better to use a more minimal ACME library. I certainly had the best intentions but certmagic is already used in caddy (which we are trying to imitate here) and has been battle-tested many times.
+Another lesson was about **using existing open-source librarys**. The current implementation is using [certmaigc](https://github.com/caddyserver/certmagic) but that wasn't my original intention. At first I thought It would be better to use a more minimal ACME library. I certainly had the best intentions but certmagic is already used in caddy (which we are trying to imitate here) and has been battle-tested many times.
 
 There was also one thing I missed during my tests. CoreDNS needs to be able to resolve the Let's Encrypt Domain during the ACME challenge. So we need to have a different system resolver (`/etc/resolv.conf`) configured for this plugin to work.
 
