@@ -29,9 +29,10 @@ TLDR: https://github.com/mariuskimmina/coredns-tlsplus
 6. [How it works](#how-it-works)
 7. [Requirements](#requirements)
 8. [Setup](#setup)
-9. [Future Work](#future-work)
-10. [Final Words](#final-words)
-11. [References](#references)
+9. [Challenges](#challenges)
+10. [Future Work](#future-work)
+11. [Final Words](#final-words)
+12. [References](#references)
 
 ## Managing Certificates before ACME
 Back in the days, before [Let's Encrypt](https://letsencrypt.org/) was a thing, obtaining and renewing TLS certificates required a lot of work. 
