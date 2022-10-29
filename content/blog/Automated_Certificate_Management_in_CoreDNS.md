@@ -298,6 +298,8 @@ Another lesson was about **using existing open-source librarys**. The current im
 
 There was also one thing I missed during my tests. CoreDNS needs to be able to resolve the Let's Encrypt Domain during the ACME challenge. So we need to have a different system resolver (`/etc/resolv.conf`) configured for this plugin to work.
 
+Also, I learned that I need to improve on working together via git and github. I created a fork of the project, created a branch and did all my changes there. So in the end I sended one giant 1.5K lines Pull Request to the CoreDNS Repo. Reviewing such a huge PR at once can be overwhelming and discouraging. A better approach would have been to open a draft PR early on and to send my updates there periodically. 
+
 ## Futute work
 There are more ways in which CoreDNS and the ACME protocol could be used for certificate management. 
 
