@@ -29,10 +29,11 @@ TLDR: https://github.com/mariuskimmina/coredns-tlsplus
 6. [How it works](#how-it-works)
 7. [Requirements](#requirements)
 8. [Setup](#setup)
-9. [Challenges](#challenges)
-10. [Future Work](#future-work)
-11. [Final Words](#final-words)
-12. [References](#references)
+9. [Example](#example)
+10. [Challenges](#challenges)
+11. [Future Work](#future-work)
+12. [Final Words](#final-words)
+13. [References](#references)
 
 ## Managing Certificates before ACME
 Back in the days, before [Let's Encrypt](https://letsencrypt.org/) was a thing, obtaining and renewing TLS certificates required a lot of work. 
@@ -273,7 +274,7 @@ example.com {
 ```
 
 
-## Setting up multiple DNS Server
+### Setting up multiple DNS Server
 For the most part, dns server should be setup with some redundancy. If you want to use this plugin with multiple CoreDNS Server, they all need to be able to access
 the same Certificate. This can be achivied using a shared filesystem, like NFS, and pointing the `certpath` of all your CoreDNS Server to a location on this shared
 fileystem.
@@ -287,6 +288,38 @@ tls acme {
     certpath /some/path/on/nfs/certs/
 }
 ```
+
+## Example
+In this section I want to walk you through setting up an encrypted dns forwarder. I will be using my own domain `mariuskimmina.com` as an example here.
+
+The CoreDNS Server needs to be publicly reachable so for this example I will be using a Digitalocean Linux Server with the IP `206.81.17.195`. I choose the cheapest one available as this setup will only exist for demonstration purposes. I choose the cheapest one available as this setup will only exist for demonstration purposes.
+
+On this Server I have setup a user `marius` with sudoer permissions. I have build a CoreDNS Server with the `tlsplus` plugin (as showcased earlier in this article) and copied it over to the Server using `scp`. and I have created the following Corefile:
+
+```
+tls://.:8853 {
+    tls acme {
+        domain core.dns.mariuskimmina.com
+        ca https://acme-staging-v02.api.letsencrypt.org/directory
+    }
+    forward . tls://9.9.9.9 {
+        tls_servername dns.quad9.net
+    }
+}
+
+dns.mariuskimmina.com {
+    hosts {
+        206.81.17.195 core.dns.example.com
+    }
+}
+```
+
+Before we are able to run this CoreDNS server, we need to setup `dns.mariuskimmina.com` at our dns registar of choice, which for me is `domains.google.com`.
+
+![image](/blog/tlsplus/registar-config.png "Config on domains.google.com")
+
+
+
 
 ## Challenges (not the ACME ones)
 Here I want to talk about obstacles I had to overcome and some things I could have done better during this project.
