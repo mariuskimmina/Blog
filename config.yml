@@ -13,8 +13,8 @@ menu:
     name: Hacks
     url: /hacks/
     weight: 20
-  - identifier: HowTos
-    name: HowTos
+  - identifier: HowTo
+    name: HowTo
     url: /howto/
     weight: 30
   - identifier: projects
