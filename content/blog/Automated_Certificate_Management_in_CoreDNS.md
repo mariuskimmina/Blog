@@ -351,6 +351,8 @@ CoreDNS-1.9.4
 linux/amd64, go1.18.1
 ```
 
+In case you are wondering why we have to answer `_acme-challenge.core.dns.mariuskimmina.com` 4 times here, this is a security mechanism that has been put in place by Let's Encrypt. You can learn more about it [here][lesec].
+
 Keep in mind that I used the staging CA of Let's Encrypt in this example, so for production use you would want to replace that. It can be helpful to test with staging first tho has Let`s Encrypt has strict rate limiting in place and if you mess up on the configuration of the registar for example you easily be blocked from future attempts for a while.
 
 
@@ -405,6 +407,7 @@ CoreDNS: https://github.com/coredns/coredns
 Certmagic: https://github.com/caddyserver/certmagic  
 Pebble: https://github.com/letsencrypt/pebble  
 
+[lesec]: https://letsencrypt.org/2020/02/19/multi-perspective-validation.html
 [ACME]: https://www.rfc-editor.org/rfc/rfc8555
 [comic]: https://howdns.works/ep1/
 [adventours in selfhosting autoritative DNS servers]: https://mariuskimmina.com/blog/2022-06-05-adventours-in-selfhosting-dns/
