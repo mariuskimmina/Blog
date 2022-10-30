@@ -314,6 +314,22 @@ dns.mariuskimmina.com {
 }
 ```
 
+By default `systemd-resolver` is running on port `53` on this ubuntu server. Since port 53 is a hard requirement for this plugin to work, we need to take down this resolver.
+
+```
+sudo systemctl disable systemd-resolved
+sudo systemctl stop systemd-resolved
+```
+
+With that done, the ubuntu server now is unable to resolve any hostname. Which is also a problem as the plugin needs to resolve the domain name of Let's Encrypt to initialize the ACME challenge. to work around this we can set a different nameserver in `/etc/resolv.conf`.
+
+```
+$ cat /etc/resolv.conf
+nameserver 1.1.1.1
+options edns0 trust-ad
+search .
+```
+
 Now we are almost ready to obtain a Certificate for `core.dns.mariuskimmina.com` and server DNS over TLS but there is one more thing. 
 
 We need to setup `dns.mariuskimmina.com` at our dns registar of choice, which for me is `domains.google.com`. In more concret terms, this means we need to setup an A record for `dns.mariuskimmina.com` that points at `206.81.17.195` and an NS record for `dns.mariuskimmina.com` that points at `dns.mariuskimmina.com`
