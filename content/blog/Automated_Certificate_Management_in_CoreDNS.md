@@ -294,7 +294,7 @@ In this section I want to walk you through setting up an encrypted dns forwarder
 
 The CoreDNS Server needs to be publicly reachable so for this example I will be using a Digitalocean Linux Server with the IP `206.81.17.195`. I choose the cheapest one available as this setup will only exist for demonstration purposes. I choose the cheapest one available as this setup will only exist for demonstration purposes.
 
-On this Server I have setup a user `marius` with sudoer permissions. I have build a CoreDNS Server with the `tlsplus` plugin (as showcased earlier in this article) and copied it over to the Server using `scp`. and I have created the following Corefile:
+On this Server I have setup a user `marius` with sudoer permissions. I have build a CoreDNS Server with the `tlsplus` plugin (as showcased earlier in this article) and copied it over to the Server using `scp`. I have also created the following Corefile:
 
 ```
 tls://.:8853 {
@@ -314,11 +314,28 @@ dns.mariuskimmina.com {
 }
 ```
 
-Before we are able to run this CoreDNS server, we need to setup `dns.mariuskimmina.com` at our dns registar of choice, which for me is `domains.google.com`.
+Now we are almost ready to obtain a Certificate for `core.dns.mariuskimmina.com` and server DNS over TLS but there is one more thing. 
+
+We need to setup `dns.mariuskimmina.com` at our dns registar of choice, which for me is `domains.google.com`. In more concret terms, this means we need to setup an A record for `dns.mariuskimmina.com` that points at `206.81.17.195` and an NS record for `dns.mariuskimmina.com` that points at `dns.mariuskimmina.com`
 
 ![image](/blog/tlsplus/registar-config.png "Config on domains.google.com")
 
+Once that has been put in place, we can run `coredns` and a certificate signed by Let's Encrypt should automatically be obtained. 
 
+```
+$ sudo ./coredns
+[INFO] plugin/tls: Obtaining TLS Certificate, may take a moment
+[INFO] plugin/tls: Answering ACME DNS request:_acme-challenge.core.dns.mariuskimmina.com.
+[INFO] plugin/tls: Answering ACME DNS request:_acme-challenge.core.dns.mariuskimmina.com.
+[INFO] plugin/tls: Answering ACME DNS request:_acme-challenge.core.dns.mariuskimmina.com.
+[INFO] plugin/tls: Answering ACME DNS request:_acme-challenge.core.dns.mariuskimmina.com.
+tls://.:8853
+dns.mariuskimmina.com.:53
+CoreDNS-1.9.4
+linux/amd64, go1.18.1
+```
+
+Keep in mind that I used the staging CA of Let's Encrypt in this example, so for production use you would want to replace that. It can be helpful to test with staging first tho has Let`s Encrypt has strict rate limiting in place and if you mess up on the configuration of the registar for example you easily be blocked from future attempts for a while.
 
 
 ## Challenges (not the ACME ones)
