@@ -12,15 +12,19 @@ menu:
   - identifier: hacks
     name: Hacks
     url: /hacks/
-    weight: 10
+    weight: 20
+  - identifier: HowTos
+    name: HowTos
+    url: /howto/
+    weight: 30
   - identifier: projects
     name: Projects
     url: /projects
-    weight: 30
+    weight: 40
   - identifier: tags
     name: Tags
     url: /tags/
-    weight: 40
+    weight: 50
 
 
 params:
