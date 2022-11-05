@@ -330,7 +330,7 @@ options edns0 trust-ad
 search .
 ```
 
-Now we are almost ready to obtain a Certificate for `dns.mariuskimmina.com` and server DNS over TLS but there is one more thing. 
+Now we are almost ready to obtain a Certificate for `dns.mariuskimmina.com` and serve DNS over TLS but there is one more thing. 
 
 We need to setup `dns.mariuskimmina.com` at our dns registar of choice, which for me is `domains.google.com`. In more concret terms, this means we need to setup an A record for `dns.mariuskimmina.com` that points at `206.81.17.195` and an NS record for `dns.mariuskimmina.com` that points at `dns.mariuskimmina.com`
 
@@ -353,7 +353,7 @@ linux/amd64, go1.18.1
 
 In case you are wondering why we have to answer `_acme-challenge.dns.mariuskimmina.com` 4 times here, this is a security mechanism that has been put in place by Let's Encrypt. You can learn more about it [here][lesec].
 
-Keep in mind that I used the staging CA of Let's Encrypt in this example, so for production use you would want to replace that. It can be helpful to test with staging first tho has Let's Encrypt has strict rate limiting in place and if you mess up on the configuration of the registar for example you easily be blocked from future attempts for a while.
+Keep in mind that I used the staging CA of Let's Encrypt in this example, so for production use you would want to replace that. It can be helpful to test with staging first tho - Let's Encrypt has strict rate limiting in place and if you mess up on the configuration of the registar for example you easily be blocked from future attempts for a while.
 
 To verify that the Server works, we can send DNS over TLS requests with `kdig`
 
