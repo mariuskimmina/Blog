@@ -299,7 +299,7 @@ On this Server I have setup a user `marius` with sudoer permissions. I have buil
 ```
 tls://.:8853 {
     tls acme {
-        domain core.dns.mariuskimmina.com
+        domain dns.mariuskimmina.com
         ca https://acme-staging-v02.api.letsencrypt.org/directory
     }
     forward . tls://9.9.9.9 {
@@ -309,7 +309,7 @@ tls://.:8853 {
 
 dns.mariuskimmina.com {
     hosts {
-        206.81.17.195 core.dns.example.com
+        206.81.17.195 dns.example.com
     }
 }
 ```
@@ -330,7 +330,7 @@ options edns0 trust-ad
 search .
 ```
 
-Now we are almost ready to obtain a Certificate for `core.dns.mariuskimmina.com` and server DNS over TLS but there is one more thing. 
+Now we are almost ready to obtain a Certificate for `dns.mariuskimmina.com` and server DNS over TLS but there is one more thing. 
 
 We need to setup `dns.mariuskimmina.com` at our dns registar of choice, which for me is `domains.google.com`. In more concret terms, this means we need to setup an A record for `dns.mariuskimmina.com` that points at `206.81.17.195` and an NS record for `dns.mariuskimmina.com` that points at `dns.mariuskimmina.com`
 
@@ -341,19 +341,51 @@ Once that has been put in place, we can run `coredns` and a certificate signed b
 ```
 $ sudo ./coredns
 [INFO] plugin/tls: Obtaining TLS Certificate, may take a moment
-[INFO] plugin/tls: Answering ACME DNS request:_acme-challenge.core.dns.mariuskimmina.com.
-[INFO] plugin/tls: Answering ACME DNS request:_acme-challenge.core.dns.mariuskimmina.com.
-[INFO] plugin/tls: Answering ACME DNS request:_acme-challenge.core.dns.mariuskimmina.com.
-[INFO] plugin/tls: Answering ACME DNS request:_acme-challenge.core.dns.mariuskimmina.com.
+[INFO] plugin/tls: Answering ACME DNS request:_acme-challenge.dns.mariuskimmina.com.
+[INFO] plugin/tls: Answering ACME DNS request:_acme-challenge.dns.mariuskimmina.com.
+[INFO] plugin/tls: Answering ACME DNS request:_acme-challenge.dns.mariuskimmina.com.
+[INFO] plugin/tls: Answering ACME DNS request:_acme-challenge.dns.mariuskimmina.com.
 tls://.:8853
 dns.mariuskimmina.com.:53
 CoreDNS-1.9.4
 linux/amd64, go1.18.1
 ```
 
-In case you are wondering why we have to answer `_acme-challenge.core.dns.mariuskimmina.com` 4 times here, this is a security mechanism that has been put in place by Let's Encrypt. You can learn more about it [here][lesec].
+In case you are wondering why we have to answer `_acme-challenge.dns.mariuskimmina.com` 4 times here, this is a security mechanism that has been put in place by Let's Encrypt. You can learn more about it [here][lesec].
 
-Keep in mind that I used the staging CA of Let's Encrypt in this example, so for production use you would want to replace that. It can be helpful to test with staging first tho has Let`s Encrypt has strict rate limiting in place and if you mess up on the configuration of the registar for example you easily be blocked from future attempts for a while.
+Keep in mind that I used the staging CA of Let's Encrypt in this example, so for production use you would want to replace that. It can be helpful to test with staging first tho has Let's Encrypt has strict rate limiting in place and if you mess up on the configuration of the registar for example you easily be blocked from future attempts for a while.
+
+To verify that the Server works, we can send DNS over TLS requests with `kdig`
+
+```
+kdig -d @dns.mariuskimmina.com:8853 google.com +tls
+;; DEBUG: Querying for owner(google.com.), class(1), type(1), server(dns.mariuskimmina.com), port(8853), protocol(TCP)
+;; DEBUG: TLS, received certificate hierarchy:
+;; DEBUG:  #1, CN=dns.mariuskimmina.com
+;; DEBUG:      SHA-256 PIN: HwChNlJlYJlSNR442IfcBmtKY9LPdAM4LlOoxLBsmT8=
+;; DEBUG:  #2, C=US,O=(STAGING) Let's Encrypt,CN=(STAGING) Ersatz Edamame E1
+;; DEBUG:      SHA-256 PIN: dcVinEyA33P2/hInHEWokuWDlfpROVda+8XRDZW7hyI=
+;; DEBUG:  #3, C=US,O=(STAGING) Internet Security Research Group,CN=(STAGING) Bogus Broccoli X2
+;; DEBUG:      SHA-256 PIN: 5OfjqXLkPnXTVmxetcPj1PEbXH2upTZebfT2X3AE8Fw=
+;; DEBUG: TLS, skipping certificate PIN check
+;; DEBUG: TLS, skipping certificate verification
+;; TLS session (TLS1.3)-(ECDHE-X25519)-(ECDSA-SECP256R1-SHA256)-(AES-128-GCM)
+;; ->>HEADER<<- opcode: QUERY; status: NOERROR; id: 10537
+;; Flags: qr rd ra; QUERY: 1; ANSWER: 1; AUTHORITY: 0; ADDITIONAL: 1
+
+;; EDNS PSEUDOSECTION:
+;; Version: 0; flags: ; UDP size: 4096 B; ext-rcode: NOERROR
+
+;; QUESTION SECTION:
+;; google.com.                  IN      A
+
+;; ANSWER SECTION:
+google.com.             287     IN      A       142.250.186.78
+
+;; Received 65 B
+;; Time 2022-11-05 11:03:35 CET
+;; From 206.81.17.195@8853(TCP) in 86.0 ms
+```
 
 
 ## Challenges (not the ACME ones)
