@@ -387,6 +387,8 @@ google.com.             287     IN      A       142.250.186.78
 ;; From 206.81.17.195@8853(TCP) in 86.0 ms
 ```
 
+Keep in mind that this example setup uses the staging Let's Encrypt CA (apparently called Bogus Broccoli X2). For production use set the `ca` parameter to `https://acme-v02.api.letsencrypt.org/`.
+
 
 ## Challenges (not the ACME ones)
 Here I want to talk about obstacles I had to overcome and some things I could have done better during this project.
