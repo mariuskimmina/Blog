@@ -292,7 +292,7 @@ tls acme {
 ## Example
 In this section I want to walk you through setting up an encrypted dns forwarder. I will be using my own domain `mariuskimmina.com` as an example here.
 
-The CoreDNS Server needs to be publicly reachable so for this example I will be using a Digitalocean Linux Server with the IP `206.81.17.195`. I choose the cheapest one available as this setup will only exist for demonstration purposes. I choose the cheapest one available as this setup will only exist for demonstration purposes.
+The CoreDNS Server needs to be publicly reachable so for this example I will be using a Digitalocean Linux Server with the IP `206.81.17.195`. I choose the cheapest one available as this setup will only exist for demonstration purposes.
 
 On this Server I have setup a user `marius` with sudoer permissions. I have build a CoreDNS Server with the `tlsplus` plugin (as showcased earlier in this article) and copied it over to the Server using `scp`. I have also created the following Corefile:
 
