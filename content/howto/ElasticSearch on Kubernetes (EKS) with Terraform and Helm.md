@@ -21,22 +21,22 @@ I assume that anyone who reads this has at least some basic understanding of Kub
 
 ## Terraform repo
 
-We start with setting up a repository for our Terraform code right away. One of the most important aspects of Infrastructure as Code is to be consistent with it and **never** give in to the urge of doing small things manually. Everything we want to do on AWS has to happen through Terraform.
+We start with setting up a repository for our Terraform code right away. One of the most important aspects of Infrastructure as Code is to be consistent with it and **never give in to the urge of doing small things manually**. Everything we want to do on AWS has to happen through Terraform.
 
-```
+```bash
 mkdir my-little-eks
 cd my-little-eks
 ```
 
 Blabla Version control
 
-```
+```bash
 git init 
 ```
 
 Blabla basic Terrarom structure
 
-```
+```bash
 touch main.tf
 touch versions.tf
 touch variables.tf
@@ -45,7 +45,7 @@ touch outputs.tf
 
 Let's first look at the `versions.tf` file. Here I define which verions of the `terraform` CLI and aws-provider are required to use this project.
 
-```
+```terraform
 terraform {
   required_providers {
     aws = {
