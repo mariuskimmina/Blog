@@ -1,5 +1,5 @@
 ---
-title: \[WIP] Creating a Kubernetes cluster on EKS with Terraform
+title: [WIP] Creating a Kubernetes cluster on EKS with Terraform
 author: Marius Kimmina
 date: 2022-10-30
 tags: [Kubernetes, AWS, EKS]
@@ -45,7 +45,7 @@ touch outputs.tf
 
 Let's first look at the `versions.tf` file. Here I define which verions of the `terraform` CLI and aws-provider are required to use this project.
 
-```terraform
+```tf
 terraform {
   required_providers {
     aws = {
@@ -61,7 +61,7 @@ The actual verions of the `terraform` CLI that I am currently on is `1.3.4` but 
 
 Next up is the `variables.tf` file. This one is also kept short, currently I am only defining the AWS region in here.
 
-```
+```tf
 variable "region" {
   description = "AWS region"
   type        = string
