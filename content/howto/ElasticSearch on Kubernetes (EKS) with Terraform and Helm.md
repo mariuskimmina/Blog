@@ -58,3 +58,14 @@ terraform {
 ```
 
 The actual verions of the `terraform` CLI that I am currently on is `1.3.4` but I expect this to work with anything newer than `1.2.0`. 
+
+Next up is the `variables.tf` file. This one is also kept short, currently I am only defining the AWS region in here.
+
+```
+variable "region" {
+  description = "AWS region"
+  type        = string
+  default     = "eu-central-1"
+}
+```
+
