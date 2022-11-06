@@ -1,5 +1,5 @@
 ---
-title: [WIP] Creating a Kubernetes cluster on EKS with Terraform
+title: (WIP) Creating a Kubernetes cluster on EKS with Terraform
 author: Marius Kimmina
 date: 2022-10-30
 tags: [Kubernetes, AWS, EKS]
