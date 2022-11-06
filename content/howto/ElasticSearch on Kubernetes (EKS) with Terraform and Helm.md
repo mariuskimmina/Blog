@@ -1,5 +1,5 @@
 ---
-title: Creating a Kubernetes cluster on EKS with Terraform
+title: \[WIP] Creating a Kubernetes cluster on EKS with Terraform
 author: Marius Kimmina
 date: 2022-10-30
 tags: [Kubernetes, AWS, EKS]
@@ -38,7 +38,23 @@ Blabla basic Terrarom structure
 
 ```
 touch main.tf
+touch versions.tf
 touch variables.tf
-touch output.tf
+touch outputs.tf
 ```
 
+Let's first look at the `versions.tf` file. Here I define which verions of the `terraform` CLI and aws-provider are required to use this project.
+
+```
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.15.0"
+    }
+  }
+  required_version = ">= 1.2.0"
+}
+```
+
+The actual verions of the `terraform` CLI that I am currently on is `1.3.4` but I expect this to work with anything newer than `1.2.0`. 
