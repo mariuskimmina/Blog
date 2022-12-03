@@ -23,7 +23,7 @@ showHero: true
 
 ---
 
-I always try to find time to work and learn something new. Usually, most of these _pet-projects_ don't see the light of day. They are, however, great opportunities to try something in the real world and learn from it.
+I always try to find time to work and learn something new. Usually, most of these _pet-projects_ don't see the light of day. They are, however, great opportunities to try something and learn from it.
 
 <table>
     <thead>

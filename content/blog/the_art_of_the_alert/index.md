@@ -44,4 +44,9 @@ Missing a critical alert can be devastating but alerting to much will also drag 
 
 Not all hope is lost tho, there was also a lot of progress in the open-source world on building tools to deal with these challenges.
 
-
+**Prometheus**: A popular monitoring and alerting system that uses a time-series database to store metrics data. 
+**Grafana**: A popular open source tool for visualizing and analyzing metrics data. 
+**Zipkin**: An open source distributed tracing system that allows you to track the performance of distributed systems and identify bottlenecks and errors.
+**ELK Stack**: The ELK (Elasticsearch, Logstash, Kibana) stack is a popular open source solution for centralized logging. 
+**Jaeger**: An open source distributed tracing system, similar to Zipkin, that is used to monitor and troubleshoot distributed systems. 
+**OpenTelemetry**: An open source project that provides a vendor-neutral API for collecting metrics and traces from applications and services. 
