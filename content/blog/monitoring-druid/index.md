@@ -1,5 +1,5 @@
 ---
-title: Monitoring Druid with Prometheus
+title: WIP - Monitoring Druid with Prometheus
 author: Marius Kimmina
 date: 2022-08-01 14:10:00 +0800
 tags: [Infrastructure, Observability, Monitoring, Druid, Prometheus]
