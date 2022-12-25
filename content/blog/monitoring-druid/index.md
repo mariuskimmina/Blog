@@ -1,7 +1,7 @@
 ---
 title: Monitoring Druid with Prometheus
 author: Marius Kimmina
-date: 2023-08-01 14:10:00 +0800
+date: 2022-08-01 14:10:00 +0800
 tags: [Infrastructure, Observability, Monitoring, Druid, Prometheus]
 published: true
 ---
