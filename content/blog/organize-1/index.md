@@ -3,7 +3,7 @@ title: WIP - How I stay organized with Obsidian Part 1 - Inputs
 author: Marius Kimmina
 date: 2022-07-01
 tags: []
-published: true
+published: false
 ---
 
 A little bit about me ..
