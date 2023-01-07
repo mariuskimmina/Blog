@@ -26,8 +26,25 @@ only:
 
 This defines a pipeline that is only executed when a) a file in `dir-a` has been changed, b) a file in `dir-b` or any subdirectory of `dir-b` has been changed, c) `file-c` has been changed.
 
+Be aware that `changes` in Gitlab is always considered true when the pipeline is triggered manually instead of by pushing code. 
 
-  # this is an OR
+
+In a case I come accross frequently is to manually trigger only certain parts of the pipeline and all CI/CD platfoms shoud allow for this in one way or another. In Gitlab you can define custom variables before triggering a Pipeline manually and then check these variables for running certain jobs.
+
+For example, if I have two seperate test jobs defined, `Test A` und `Test B` then I can define that `Test A` may only run if the variable `TEST_A` is set to `yes`
+
+```yaml
+only:
+  variables: 
+    - $TEST_A == "yes"
+```
+
+
+
+---
+
+
+  # this is an AND
   # It always works with variables because changes for manually started pipelines always returns true ...
       #only:
       #variables: 
