@@ -3,7 +3,7 @@ title: WIP - Monitoring Druid with Prometheus
 author: Marius Kimmina
 date: 2022-08-01 14:10:00 +0800
 tags: [Infrastructure, Observability, Monitoring, Druid, Prometheus]
-published: true
+published: false
 ---
  
 TLDR: Here is a table showing you which druid monitors to configure on wich component 
