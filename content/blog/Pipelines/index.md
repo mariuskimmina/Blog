@@ -29,7 +29,7 @@ This defines a pipeline that is only executed when a) a file in `dir-a` has been
 Be aware that `changes` in Gitlab is always considered true when the pipeline is triggered manually instead of by pushing code. 
 
 
-In a case I come accross frequently is to manually trigger only certain parts of the pipeline and all CI/CD platfoms shoud allow for this in one way or another. In Gitlab you can define custom variables before triggering a Pipeline manually and then check these variables for running certain jobs.
+Another case I come accross frequently is to manually trigger only certain parts of the pipeline and all CI/CD platfoms shoud allow for this in one way or another. In Gitlab you can define custom variables before triggering a Pipeline manually and then check these variables for running certain jobs.
 
 For example, if I have two seperate test jobs defined, `Test A` und `Test B` then I can define that `Test A` may only run if the variable `TEST_A` is set to `yes`
 
@@ -39,6 +39,29 @@ only:
     - $TEST_A == "yes"
 ```
 
+When you define many rules around when to run your pipelines, things can get a bit confusing, for example consider the following `only` definition. This Pipeline will run when either `TEST_A` or `TEST_C` is yes. 
+
+```yaml
+only:
+  variables: 
+    - $TEST_A == "yes"
+    - $TEST_C == "yes"
+```
+
+But what about the following? 
+
+```yaml
+only:
+  variables: 
+    - $TEST_A == "yes"
+    - $TEST_C == "yes"
+  changes:
+    - dir-a/*
+    - dir-b/**/*
+    - file-c
+```
+
+Well this will also run when the Pipeline is triggerd manually and either `TEST_A` or `TEST_C` is set to yes. It will never on any code push tho, because both the `variables` and the `changes` section have to evaluate to `true`. When you trigger the Pipeline manually, `changes` are always true, so in that case it works, but if you push code changes you never have custom variables defined thus your pipeline will never run.
 
 
 ---
