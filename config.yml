@@ -42,8 +42,6 @@ params:
     subtitle: "Trying Failing Learning"
     imageUrl: "/profile/pic4.jpg" # optional
     imageTitle: "Marius Kimmina" # optional
-      #imageWidth: 120 # custom size
-      #imageHeight: 120 # custom size
     buttons:
       - name: About
         url: "/about"
