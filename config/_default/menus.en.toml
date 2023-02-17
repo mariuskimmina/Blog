@@ -24,10 +24,6 @@
   pageRef = "hacks"
   weight = 20
 [[main]]
-  name = "HowTo"
-  pageRef = "howto"
-  weight = 30
-[[main]]
   name = "Projects"
   pageRef = "projects"
   weight = 40
