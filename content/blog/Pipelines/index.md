@@ -3,7 +3,7 @@ title: WIP Building better CI/CD Pipelines
 author: Marius Kimmina
 date: 2022-09-02 14:10:00 +0800
 tags: [Infrastructure, Go, Cloudflare]
-published: true
+published: false
 ---
 
 If you are reading this, you probably know what a CI/CD Pipeline is and you have probably used one before. You 

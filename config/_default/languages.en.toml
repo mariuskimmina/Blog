@@ -20,9 +20,9 @@ bio = "IT Infrastructure at scale"
 links = [
     { linkedin = "https://linkedin.com/in/mariuskimmina" },
     { github = "https://github.com/mariuskimmina" },
-    { stack-overflow = "https://stackoverflow.com/users/userid/username" },
-    { goodreads = "https://stackoverflow.com/users/userid/username" },
-    { twitter = "https://twitter.com/username" },
+    { link = { href = "https://www.goodreads.com/user/show/152870707-marius-kimmina", text = "Goodreads", icon = "goodreads" } },
+    { link = { href = "https://stackoverflow.com/users/userid/username", text = "StackOverflow", icon = "stackoverflow" } },
+    { twitter = "https://twitter.com/marius_kimmina" },
     #{ twitch = "https://twitch.tv/username" },
     #{ youtube = "https://youtube.com/username" },
   #   { email = "mailto:hello@your_domain.com" },

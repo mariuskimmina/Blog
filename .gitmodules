@@ -2,3 +2,6 @@
 	path = themes/blowfish
 	url = https://github.com/nunocoracao/blowfish.git
 	branch = main
+[submodule "themes/linkfree"]
+	path = themes/linkfree
+	url = git@github.com:mariuskimmina/linkfree.git
