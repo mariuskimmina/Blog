@@ -1,16 +1,4 @@
 theme = "blowfish"
 languageCode = "en"
-baseURL = "https://mariuskimmina.com.com"
+baseURL = "https://mariuskimmina.com"
 
-[author]
-name = "Marius Kimmina"
-image = "img/profile.jpg"
-headline = "DevOps Engineer | Open Source Contributor"
-bio = "IT Infrastructure at scale"
-links = [
-    { link = { href = "https://github.com/mariuskimmina", text = "Github", img = "https://www.vectorlogo.zone/logos/stackoverflow/stackoverflow-icon.svg"} },
-    { link = { href = "https://twitter.com/marius_kimmina", text = "Twitter" } },
-    { link = { href = "https://www.goodreads.com/user/show/152870707-marius-kimmina", text = "Goodreads", icon = "goodreads" } },
-    { link = { href = "https://www.goodreads.com/user/show/152870707-marius-kimmina", text = "Goodreads", icon = "goodreads" } },
-    { link = { href = "https://stackoverflow.com/users/userid/username", text = "StackOverflow", icon = "stackoverflow" } },
-]
