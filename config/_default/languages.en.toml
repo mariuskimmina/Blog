@@ -21,8 +21,9 @@ links = [
     { linkedin = "https://linkedin.com/in/mariuskimmina" },
     { github = "https://github.com/mariuskimmina" },
     { goodreads = "https://www.goodreads.com/user/show/152870707-marius-kimmina" },
-    { stackoverflow = "https://stackoverflow.com/users/13693791/marius-kimmina" },
+    { stack-overflow = "https://stackoverflow.com/users/13693791/marius-kimmina" },
     { twitter = "https://twitter.com/mariuskimmina" },
+    { ko-fi = "https://ko-fi.com/mariuskimmina" },
     #{ twitch = "https://twitch.tv/username" },
     #{ youtube = "https://youtube.com/username" },
   #   { email = "mailto:hello@your_domain.com" },
@@ -60,5 +61,4 @@ links = [
   #   { tiktok = "https://tiktok.com/@username" },
   #   { tumblr = "https://username.tumblr.com" },
   #   { whatsapp = "https://wa.me/phone-number" },
-  #   { ko-fi = "https://ko-fi.com/username" },
 ]
