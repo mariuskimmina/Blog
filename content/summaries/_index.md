@@ -20,4 +20,4 @@ showHero: true
 #groupByYear : false
 ---
 
-Summaries of books that I have read
+Summaries I have written for books that I have read
