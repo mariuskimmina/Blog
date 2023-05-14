@@ -24,3 +24,5 @@ which I made [a major contribution][blog] to [CoreDNS][coredns].
 [coredns]: https://github.com/coredns/coredns
 [blog]: https://mariuskimmina.com/blog/2022-06-05-automated_certificate_management_in_coredns/
 [GSoC]: https://summerofcode.withgoogle.com/
+
+<a rel="me" href="https://mastodon.social/@MariusKimmina">Mastodon</a>
