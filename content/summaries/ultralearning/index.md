@@ -1,4 +1,10 @@
-# Ultralearning by Scott H. Young
+---
+title: Ultralearning by Scott H. Young
+author: Marius Kimmina
+date: 2023-05-14 14:10:00 +0800
+tags: [learning]
+published: true
+---
 
 In this book the author has analyzed successfull learning projects that seem either extreme or outright impossible such as:
 
