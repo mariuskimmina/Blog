@@ -70,7 +70,7 @@ Rule of thumb, 10% of the total learning is for research - for longer projects t
 
 Struggle to start - procrastination - just start for 5 minute
   
-Failing to sustain focus - distractions - [[Flow state]] may be not suited for [[Deliberate practice]] or ultra learning - it’s often too difficult to get into flow.
+Failing to sustain focus - distractions - Flow state may be not suited for Deliberate practice or ultra learning - it’s often too difficult to get into flow.
 
 ---
 
