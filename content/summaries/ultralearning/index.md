@@ -74,9 +74,11 @@ Rule of thumb, 10% of the total learning is for research - for longer projects t
 
 > Sharpen your knife
 
-Struggle to start - procrastination - just start for 5 minute
+The hardest part is often to just get started, when you set out to study for 3 hours straight, that is an overwhelming task. If you instead set out to just study for 5 minutes it is easier to get started and then after those 5 minutes you will often find it easier to keep going.
   
-Failing to sustain focus - distractions - Flow state may be not suited for Deliberate practice or ultra learning - it’s often too difficult to get into flow.
+* Try to use the pomodoro technique
+* Just get started for 5 minutes, then see if you want to keep going
+* Reduce distractions in your envrionment
 
 ---
 
@@ -109,7 +111,7 @@ one example where this is fairly obvious is language learning, there is:
 For other skills it’s less obvious but still possible. Identifying these components can help you find your weak point and then apply deliberate practice to it.
 
 
-Q: What are the components of programming?
+Q: What are the components of programming?  
 A:
 -   Design patterns
 -   Clean Code principles
@@ -162,6 +164,8 @@ There is also different kinds of feedback
 
 > Don't fill a leaky bucket
 
+* Spread your learning over more periods, don't pull an all nighter just before the test.
+* Figure out what the core principles or informations are then emphasize these more frequently.
 
 ---
 
