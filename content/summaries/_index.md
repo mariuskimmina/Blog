@@ -1,5 +1,5 @@
 ---
-title: "Blog"
+title: "Summaries"
 draft: false
 showDate : false
 showDateUpdated : false
