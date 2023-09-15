@@ -13,16 +13,14 @@ which I made [a major contribution][blog] to [CoreDNS][coredns].
 # Find me
 
 * [Github][Github]
-* [Twitter][Twitter]
 * [LinkedIn][linkedIn]
 * [HackTheBox][HTB]
 
 [Github]: https://github.com/mariuskimmina
-[Twitter]: https://twitter.com/MariusKimmina
 [LinkedIn]: https://www.linkedin.com/in/marius-kimmina/
 [HTB]: https://app.hackthebox.com/profile/36525
 [coredns]: https://github.com/coredns/coredns
 [blog]: https://mariuskimmina.com/blog/2022-06-05-automated_certificate_management_in_coredns/
 [GSoC]: https://summerofcode.withgoogle.com/
 
-<a rel="me" href="https://mastodon.social/@MariusKimmina">Mastodon</a>
+<a rel="me" href="https://infosec.exchange/@MariusKimmina">Mastodon</a>

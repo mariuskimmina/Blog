@@ -7,7 +7,7 @@ rtl = false
 
 title = "Marius Kimmina"
 logo = "img/logo.png"
-description = "Teaching IT infrastructure skills at scale"
+description = "Marius Home on the Web"
 # copyright = "Copy, _right?_ :thinking_face:"
 
 dateFormat = "2 January 2006"
@@ -15,14 +15,14 @@ dateFormat = "2 January 2006"
 [author]
 name = "Marius Kimmina"
 image = "img/profile.jpg"
-headline = "DevOps Engineer | Open Source Contributor"
+headline = "Software Engineer | Open Source Contributor"
 bio = "IT Infrastructure at scale"
 links = [
     { linkedin = "https://linkedin.com/in/mariuskimmina" },
     { github = "https://github.com/mariuskimmina" },
     { goodreads = "https://www.goodreads.com/user/show/152870707-marius-kimmina" },
     { stack-overflow = "https://stackoverflow.com/users/13693791/marius-kimmina" },
-    { mastodon = "https://mastodon.social/@MariusKimmina" },
+    { mastodon = "https://infosec.exchange/@MariusKimmina" },
     { reddit = "https://reddit.com/user/mariuskimmina" },
     { ko-fi = "https://ko-fi.com/mariuskimmina" },
     #{ twitch = "https://twitch.tv/username" },

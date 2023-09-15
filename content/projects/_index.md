@@ -39,5 +39,10 @@ I always try to find time to work and learn something new. Usually, most of thes
             <td>CoreDNS Plugin that aims to automate TLS certificates</td>
             <td><a target="_blank" href="https://github.com/mariuskimmina/coredns-tlsplus">repo</a></td>
         </tr>
+         <tr>
+            <td>This site</td>
+            <td>My home on the web build with hugo</td>
+            <td><a target="_blank" href="https://github.com/mariuskimmina/blog">repo</a></td>
+        </tr>
     </tbody>
 </table>
