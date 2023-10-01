@@ -39,7 +39,7 @@ I always try to find time to work and learn something new. Usually, most of thes
             <td><a target="_blank" href="https://github.com/mariuskimmina/coredns-tlsplus">repo</a></td>
         </tr>
          <tr>
-            <td>This site</td>
+            <td>Website</td>
             <td>My home on the web build with hugo</td>
             <td><a target="_blank" href="https://github.com/mariuskimmina/blog">repo</a></td>
         </tr>
@@ -47,6 +47,11 @@ I always try to find time to work and learn something new. Usually, most of thes
             <td>Ansible Role Dotfiles</td>
             <td>An ansible role that sets up custom system configurations on linux maschines</td>
             <td><a target="_blank" href="https://github.com/mariuskimmina/ansible-role-dotfiles">repo</a></td>
+        </tr>
+         <tr>
+            <td>Dotfiles</td>
+            <td>Custom sytem configurations</td>
+            <td><a target="_blank" href="https://github.com/mariuskimmina/.dotfiles">repo</a></td>
         </tr>
     </tbody>
 </table>
