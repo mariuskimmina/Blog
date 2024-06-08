@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Marius Kimmina</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on Marius Kimmina</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 14 May 2023 14:10:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learning</title>
+      <link>http://localhost:1313/tags/learning/</link>
+      <pubDate>Sun, 14 May 2023 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DNS</title>
+      <link>http://localhost:1313/tags/dns/</link>
+      <pubDate>Fri, 02 Sep 2022 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/dns/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Infra</title>
+      <link>http://localhost:1313/tags/infra/</link>
+      <pubDate>Fri, 02 Sep 2022 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/infra/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>http://localhost:1313/tags/docker/</link>
+      <pubDate>Mon, 08 Mar 2021 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>http://localhost:1313/tags/linux/</link>
+      <pubDate>Mon, 08 Mar 2021 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tomcat</title>
+      <link>http://localhost:1313/tags/tomcat/</link>
+      <pubDate>Mon, 08 Mar 2021 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/tomcat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Distributed Systems</title>
+      <link>http://localhost:1313/tags/distributed-systems/</link>
+      <pubDate>Sat, 18 Jul 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/distributed-systems/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kerberos</title>
+      <link>http://localhost:1313/tags/kerberos/</link>
+      <pubDate>Sat, 18 Jul 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/kerberos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Network</title>
+      <link>http://localhost:1313/tags/network/</link>
+      <pubDate>Sat, 18 Jul 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/network/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Privilege Escalation</title>
+      <link>http://localhost:1313/tags/privilege-escalation/</link>
+      <pubDate>Sat, 18 Jul 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/privilege-escalation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>System Design</title>
+      <link>http://localhost:1313/tags/system-design/</link>
+      <pubDate>Sat, 18 Jul 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/system-design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>http://localhost:1313/tags/windows/</link>
+      <pubDate>Sat, 18 Jul 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/windows/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ftp</title>
+      <link>http://localhost:1313/tags/ftp/</link>
+      <pubDate>Sun, 21 Jun 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/ftp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Path Traversal</title>
+      <link>http://localhost:1313/tags/path-traversal/</link>
+      <pubDate>Sun, 21 Jun 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/path-traversal/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dll Injection</title>
+      <link>http://localhost:1313/tags/dll-injection/</link>
+      <pubDate>Sat, 30 May 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/dll-injection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cryptography</title>
+      <link>http://localhost:1313/tags/cryptography/</link>
+      <pubDate>Sat, 09 May 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/cryptography/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>BSD</title>
+      <link>http://localhost:1313/tags/bsd/</link>
+      <pubDate>Sat, 11 Apr 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/bsd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Redis</title>
+      <link>http://localhost:1313/tags/redis/</link>
+      <pubDate>Sat, 14 Mar 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/redis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Webminn</title>
+      <link>http://localhost:1313/tags/webminn/</link>
+      <pubDate>Sat, 14 Mar 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/webminn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>36C3</title>
+      <link>http://localhost:1313/tags/36c3/</link>
+      <pubDate>Sat, 25 Jan 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/36c3/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bruteforce</title>
+      <link>http://localhost:1313/tags/bruteforce/</link>
+      <pubDate>Wed, 01 Jan 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/bruteforce/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GraphQL</title>
+      <link>http://localhost:1313/tags/graphql/</link>
+      <pubDate>Wed, 01 Jan 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/graphql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Buffer Overflow</title>
+      <link>http://localhost:1313/tags/buffer-overflow/</link>
+      <pubDate>Sun, 24 Nov 2019 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/buffer-overflow/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

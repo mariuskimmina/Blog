@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reverse Engineering on Marius Kimmina</title>
+    <link>http://localhost:1313/categories/reverse-engineering/</link>
+    <description>Recent content in Reverse Engineering on Marius Kimmina</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 25 Jan 2020 14:10:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/reverse-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>36C3 Maybe</title>
+      <link>http://localhost:1313/hacks/36c3maybe/</link>
+      <pubDate>Sat, 25 Jan 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/hacks/36c3maybe/</guid>
+      <description>0x0. Introduction This Challenge was part of the 36C3 Junior CTF. It was a reverse engeneering challenge with a difficulty rating of medium. You were only given a binary.&#xA;0x1. Something is weird here The first thing I always do for reverse engeneering challenges is to look at the binary with &amp;ldquo;file&amp;rdquo;</description>
+    </item>
+  </channel>
+</rss>

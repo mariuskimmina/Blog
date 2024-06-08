@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on Marius Kimmina</title>
+    <link>http://localhost:1313/categories/web/</link>
+    <description>Recent content in Web on Marius Kimmina</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 Jan 2020 14:10:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>36C3 Querying</title>
+      <link>http://localhost:1313/hacks/36c3querying/</link>
+      <pubDate>Wed, 01 Jan 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/hacks/36c3querying/</guid>
+      <description>0x0. Introduction This Challenge was part of the 36C3 Junior CTF. It was a &amp;ldquo;Web&amp;rdquo; challenge with a difficulty rating of &amp;ldquo;Medium&amp;rdquo;, you were given an URL for the live challenge server and also a copy of the server (with a fake flag obv) as a Docker Container to run locally to test your exploits.</description>
+    </item>
+  </channel>
+</rss>

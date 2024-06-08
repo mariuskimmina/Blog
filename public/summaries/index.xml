@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Summaries on Marius Kimmina</title>
+    <link>http://localhost:1313/summaries/</link>
+    <description>Recent content in Summaries on Marius Kimmina</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 14 May 2023 14:10:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/summaries/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ultralearning by Scott H. Young</title>
+      <link>http://localhost:1313/summaries/ultralearning/</link>
+      <pubDate>Sun, 14 May 2023 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/summaries/ultralearning/</guid>
+      <description>In this book the author has analyzed successfull learning projects that seem either extreme or outright impossible such as:&#xA;The entire MIT Computer science undergrad curriculum in one year Learning a foreign langauge in 3 months Develop a video game all by yourself (stardew valley) and others.</description>
+    </item>
+  </channel>
+</rss>

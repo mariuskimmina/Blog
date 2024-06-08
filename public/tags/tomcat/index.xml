@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tomcat on Marius Kimmina</title>
+    <link>http://localhost:1313/tags/tomcat/</link>
+    <description>Recent content in Tomcat on Marius Kimmina</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 08 Mar 2021 14:10:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/tomcat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HackTheBox Feline</title>
+      <link>http://localhost:1313/hacks/feline/</link>
+      <pubDate>Mon, 08 Mar 2021 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/hacks/feline/</guid>
+      <description>0x0 Introduction The first hard box that I have ever pwned, so lets dive right into it. This box involved a java deserialization attack to first get an inital foothold, once we are on it we use a known exploit in saltstack to become root of docker container, now you might wonder: Why would we want to become root of a docker-container?</description>
+    </item>
+  </channel>
+</rss>

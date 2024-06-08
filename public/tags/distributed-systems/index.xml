@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Distributed Systems on Marius Kimmina</title>
+    <link>http://localhost:1313/tags/distributed-systems/</link>
+    <description>Recent content in Distributed Systems on Marius Kimmina</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 18 Jul 2020 14:10:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/distributed-systems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The CAP Theorem</title>
+      <link>http://localhost:1313/til/2023-09-17-captheorem/</link>
+      <pubDate>Sat, 18 Jul 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/til/2023-09-17-captheorem/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

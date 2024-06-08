@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on Marius Kimmina</title>
+    <link>http://localhost:1313/tags/windows/</link>
+    <description>Recent content in Windows on Marius Kimmina</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 18 Jul 2020 14:10:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HackTheBox Sauna</title>
+      <link>http://localhost:1313/hacks/sauna/</link>
+      <pubDate>Sat, 18 Jul 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/hacks/sauna/</guid>
+      <description>0x0 Introduction Welcome to another HackTheBox writeup, in this one we have to enumerate users, make heavy use of impacket scripts to kerberoast one of the users and we utilize winpeas to escalate our privileges.</description>
+    </item>
+    <item>
+      <title>HackTheBox ServMon</title>
+      <link>http://localhost:1313/hacks/servmon/</link>
+      <pubDate>Sun, 21 Jun 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/hacks/servmon/</guid>
+      <description>0x0 Introduction Yet another Windows box. In this one we use anonymous ftp access to find out about the existens of some internal files and then abuse a path traversal vulnerability to get hold of these files.</description>
+    </item>
+    <item>
+      <title>HackTheBox Resolute</title>
+      <link>http://localhost:1313/hacks/resolute/</link>
+      <pubDate>Sat, 30 May 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/hacks/resolute/</guid>
+      <description>0x0 Introduction This was a medium Windows Box, featuring rpcclient, default Passwords and a dll injection. This one took me quite a bit of time as I am not that used to working with Windows maschines and I learned a lot from this one.</description>
+    </item>
+  </channel>
+</rss>

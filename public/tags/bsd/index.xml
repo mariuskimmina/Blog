@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BSD on Marius Kimmina</title>
+    <link>http://localhost:1313/tags/bsd/</link>
+    <description>Recent content in BSD on Marius Kimmina</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 11 Apr 2020 14:10:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/bsd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HackTheBox Traverxec</title>
+      <link>http://localhost:1313/hacks/traverxec/</link>
+      <pubDate>Sat, 11 Apr 2020 14:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/hacks/traverxec/</guid>
+      <description>0x0 Introduction Yet another HTB box and again one of the easier ones. This time we had to exploit a vulnerable nostromo webserver version for command execution and then escalate privileges from there.</description>
+    </item>
+  </channel>
+</rss>
