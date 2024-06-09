@@ -1,7 +1,7 @@
 ---
 title: Immutability of pods in Kubernetes
 author: Marius Kimmina
-date: 2024-06-08 14:10:00 +0800
+date: 2024-06-09 14:10:00 +0800
 categories: [TIL]
 tags: [kubernetes]
 published: true
